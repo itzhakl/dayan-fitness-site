@@ -18,8 +18,8 @@ const Ourclasses = ({setSelectedPage}: Props) => {
                     <p className="py-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam aspernatur, consectetur corporis aut aliquam ipsum corrupti nobis, libero rem exercitationem labore, itaque voluptas dolorem quam. Odit quia voluptate iusto, maxime quaerat sit ducimus illum adipisci dolore ipsam possimus modi quam.</p>
                 </div>
             </motion.div>
-            <div className="mt-10 h-[353px] w-full overflow-x-auto overflow-y-hidden">
-                <ul className="w-[2800px] whitespace-nowrap">
+            <div className="mt-10 h-[460px] w-full overflow-x-auto overflow-y-hidden">
+                <ul className="whitespace-nowrap">
                     {
                         datas.map((item: DatasType, index: number) => (
                             <Class key={`${item.name}-${index}`} item={item} />
