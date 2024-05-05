@@ -50,7 +50,7 @@ const Navbar = ({isTopOfPage, selectedPage, setSelectedPage}: Props) => {
                         </button>  
                     )}
                     {/*Left Side  */}
-                    <img src={Logo} alt="logo" />
+                    <img height='50px' width='50px' src={Logo} alt="logo" />
                 </div>
             </div>
         </div>
