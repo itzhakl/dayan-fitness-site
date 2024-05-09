@@ -11,7 +11,15 @@
   -moz-osx-smoothing: grayscale;
   background-color: black;
 }
-div#NagishLiTrigger {
-  right: 0 !important;
-  left: 15px;
+
+div#NagishLiWidget{
+  left:auto;
+  right:10px;
+  transform: translate(120%,0);
+}
+
+div#NagishLiWidget.nagishli-widget-show{
+  left:auto;
+  right:10px;
+  transform: translate(0,0);
 }
