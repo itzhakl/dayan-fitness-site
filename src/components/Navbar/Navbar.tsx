@@ -16,7 +16,7 @@ const Navbar = ({isTopOfPage, selectedPage, setSelectedPage}: Props) => {
   const flexBetween = 'flex items-center justify-between';
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
-  const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
+  const navbarBackground = isTopOfPage ? "" : "bg-teal-600 drop-shadow";
 
   const Links = (
       <>
@@ -57,7 +57,7 @@ const Navbar = ({isTopOfPage, selectedPage, setSelectedPage}: Props) => {
         {/* Mobile Menu */}
         {
         !isAboveMediumScreens && isMenuToggled && (
-            <div className='fixed right-0 bottom-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl'>
+            <div className='fixed right-0 bottom-0 z-40 h-full w-[300px] bg-teal-600 drop-shadow-xl'>
                 {/* Close Button */}
                 <div className="flex justify-start p-10">
                     <button title="close" onClick={() => setIsMenuToggled(!isMenuToggled)}>

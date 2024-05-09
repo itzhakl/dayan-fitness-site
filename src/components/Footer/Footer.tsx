@@ -3,7 +3,7 @@ import { HebrewDisplayName } from '@/shared/types';
 
 const Footer = (): JSX.Element => {
   return (
-    <footer className='bg-primary-100 py-16'>
+    <footer className='bg-teal-600 py-16'>
         <div className='w-5/6 mx-auto gap-16 md:flex'>
             <div className='mt-16 basis-1/2 md:mt-0'>
                 <img height='50px' width='50px' src={Logo} alt="footer-logo" />

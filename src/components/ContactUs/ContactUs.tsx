@@ -32,7 +32,7 @@ const ContactUs = ({setSelectedPage}: Props) => {
                 <motion.div className="mt-10 basis-3/5 md:mt-0" initial='hidden' whileInView='visible' viewport={{once: true, amount: 0.5}} transition={{duration: 0.5}} variants={{hidden: {opacity: 0, y:50}, visible: {opacity:1, y:0}}}>
                     <form
                     // target="_blank"
-                    onSubmit={handleOnSubmit} method='POST' action="https://formsubmit.co/c6e751c1bb2f3396befecf4f726e3991">
+                    onSubmit={handleOnSubmit} method='POST' action="https://formsubmit.co/hid0504154438@gmail.com">
                         <input type="text" className={inputStyle} placeholder="שם" {...register('name', { required: true, maxLength: 100, })} /> { errors.name && (
                             <p className="mt-1 text-primary-500">
                                 {errors.name.type === "required" && "This field is required."} 
