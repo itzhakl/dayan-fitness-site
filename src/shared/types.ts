@@ -1,5 +1,6 @@
 export enum SelectedPage {
     Home = 'home',
+    AboutUs = 'aboutus',
     Benefits = 'benefits',
     OurClasses = 'ourclasses',
     ContactUs = 'contactus'
@@ -7,6 +8,7 @@ export enum SelectedPage {
 
 export enum HebrewDisplayName {
   home = 'בית',
+  aboutus = 'מי אנחנו',
   benefits = 'יתרונות',
   ourclasses = 'השיעורים שלנו',
   contactus = 'צור קשר',

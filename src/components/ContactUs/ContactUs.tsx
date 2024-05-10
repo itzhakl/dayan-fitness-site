@@ -32,7 +32,7 @@ const ContactUs = ({setSelectedPage}: Props) => {
                 <motion.div className="mt-10 basis-3/5 md:mt-0" initial='hidden' whileInView='visible' viewport={{once: true, amount: 0.5}} transition={{duration: 0.5}} variants={{hidden: {opacity: 0, y:50}, visible: {opacity:1, y:0}}}>
                     <form
                     // target="_blank"
-                    onSubmit={handleOnSubmit} method='POST' action="https://formsubmit.co/hid0504154438@gmail.com">
+                    onSubmit={handleOnSubmit} method='POST' action="https://formsubmit.co/ae263998254e908b749115bf2f84b5aa">
                         <input type="text" className={inputStyle} placeholder="שם" {...register('name', { required: true, maxLength: 100, })} /> { errors.name && (
                             <p className="mt-1 text-primary-500">
                                 {errors.name.type === "required" && "This field is required."} 
@@ -40,10 +40,17 @@ const ContactUs = ({setSelectedPage}: Props) => {
                             </p>
                         )}
 
+                        <input dir="rtl" type="tel" className={inputStyle} placeholder="מספר טלפון" {...register('phone', { required: true, pattern: /^0(?:[57]\d|2\d)-?\d{7}$/i, })} /> { errors.phone && (
+                            <p className="mt-1 text-primary-500">
+                                {errors.phone.type === "required" && "This field is required."} 
+                                {errors.phone.type === "pattern" && "Invalid Phone number"} 
+                            </p>
+                        )}
+
                         <input type="email" className={inputStyle} placeholder="מייל" {...register('email', { required: true, pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, })} /> { errors.email && (
                             <p className="mt-1 text-primary-500">
                                 {errors.email.type === "required" && "This field is required."} 
-                                {errors.email.type === "pattern" && "Invalid Email address"} 
+                                {errors.email.type === "validate" && "Invalid Email address"} 
                             </p>
                         )}
 

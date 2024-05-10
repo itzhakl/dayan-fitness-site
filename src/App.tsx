@@ -6,6 +6,7 @@ import Benefits from '@/components/Benefits/Benefits';
 import Ourclasses from '@/components/OurClasses/Ourclasses';
 import ContactUs from '@/components/ContactUs/ContactUs';
 import Footer from '@/components/Footer/Footer';
+import AboutUs from '@/components/AboutUs/AboutUs';
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home);
@@ -27,6 +28,7 @@ function App() {
     <div dir='rtl' className="app bg-black text-teal-200">
       <Navbar isTopOfPage={isTopOfPage} selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
       <Home setSelectedPage={setSelectedPage} />
+      <AboutUs setSelectedPage={setSelectedPage} />
       <Benefits setSelectedPage={setSelectedPage} />
       <Ourclasses setSelectedPage={setSelectedPage} />
       <ContactUs setSelectedPage={setSelectedPage} />

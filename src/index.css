@@ -4,13 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-smoothing: grayscale;
   background-color: black;
-}
+} */
 
 div#NagishLiWidget{
   left:auto;

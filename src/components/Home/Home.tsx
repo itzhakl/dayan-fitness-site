@@ -35,9 +35,7 @@ const Home = ({setSelectedPage}: Props) => {
                       </div>
                   </div>
                   <p className='text-sm mt-8'>
-                    Unrivaled Gym. Unparalleled Training Fitness Classes. World Class
-                    Studios to get the Body Shapes That you Dream of.. Get Your Dream
-                    Body Now.
+                    {'ברוכים הבאים לסטודיו כושר דיין - המקום שבו תגלו את הגרסה הטובה ביותר של עצמכם! באתר שלנו, נציע לך חוויה מעוררת השראה ומגוונת בתרגולים ופעילויות כושר. ניתן למצוא אצלנו מגוון רחב של שיעורי כושר, כולל סטים מותאמים אישית, אימוני TRX, יוגה, ועוד. בנוסף, צוות המדריכים המקצועי שלנו יסייע לך להשיג את היעדים האישיים שלך בדרך הכי יעילה ומהנה. הצטרפו אלינו ותחוו את השינוי שתמיד רציתם!'}
                   </p>
               </motion.div>
               {/* Actions */}
