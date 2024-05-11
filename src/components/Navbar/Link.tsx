@@ -1,18 +1,19 @@
-import AnchorLink from "react-anchor-link-smooth-scroll";
+import { Link as LinkScroll } from 'react-scroll/modules';
 import { HebrewDisplayName, SelectedPage } from '@/shared/types';
 
 type Props = {
-    page: string;
-    selectedPage: SelectedPage;
-    setSelectedPage: (value: SelectedPage) => void;
+  page: string;
+  selectedPage: number;
+  setSelectedPage: (value: number) => void;
 }
 
-const Link = ({page, selectedPage, setSelectedPage}: Props) => {
+const Link = ({ page, selectedPage, setSelectedPage }: Props) => {
   const lowerCasePage = page.toLowerCase().replace(/ /g, '') as SelectedPage;
+  const selectedPagesArray = Object.values(SelectedPage);
   return (
-    <AnchorLink href={`#${lowerCasePage}`} onClick={() => setSelectedPage(lowerCasePage)} className={`${selectedPage === lowerCasePage ? "text-primary-500" : ""} transition duration-500 hover:text-primary-300`}>
+    <LinkScroll smooth duration={1000} to={lowerCasePage} onClick={() => setSelectedPage(selectedPagesArray.indexOf(lowerCasePage))} className={`${selectedPagesArray[selectedPage] === lowerCasePage ? "text-primary-500" : ""} transition duration-500 hover:text-primary-300`}>
         {HebrewDisplayName[lowerCasePage]}
-    </AnchorLink>
+    </LinkScroll>
   );
 }
 

@@ -5,17 +5,17 @@ import { datas } from "./data";
 import Class from "./Class";
 
 type Props = {
-    setSelectedPage: (value: SelectedPage) => void;
+    setSelectedPage: (value: number) => void;
 }
 
 const Ourclasses = ({setSelectedPage}: Props) => {
   return (
     <section id='ourclasses' className="w-full bg-teal-600 py-40">
-        <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.OurClasses)} >
+        <motion.div onViewportEnter={() => setSelectedPage(Object.values(SelectedPage).indexOf(SelectedPage.OurClasses))} >
             <motion.div className="mx-auto w-5/6" initial='hidden' whileInView='visible' viewport={{once: true, amount: 0.5}} transition={{duration: 0.5}} variants={{hidden: {opacity: 0, x: -50}, visible: {opacity:1, x:0}}}>
                 <div className="md:w-3/5">
                     <HText>our classes</HText>
-                    <p className="py-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam aspernatur, consectetur corporis aut aliquam ipsum corrupti nobis, libero rem exercitationem labore, itaque voluptas dolorem quam. Odit quia voluptate iusto, maxime quaerat sit ducimus illum adipisci dolore ipsam possimus modi quam.</p>
+                    {/* <p className="py-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam aspernatur, consectetur corporis aut aliquam ipsum corrupti nobis, libero rem exercitationem labore, itaque voluptas dolorem quam. Odit quia voluptate iusto, maxime quaerat sit ducimus illum adipisci dolore ipsam possimus modi quam.</p> */}
                 </div>
             </motion.div>
             <div className="mt-10 h-[460px] w-full overflow-x-auto overflow-y-hidden">

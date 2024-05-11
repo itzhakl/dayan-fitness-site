@@ -8,17 +8,17 @@ import ActionButton from "@/shared/ActionButton";
 
 type Props = {
   isTopOfPage: boolean;
-  selectedPage: SelectedPage;
-  setSelectedPage: (value: SelectedPage) => void;
+  selectedPage: number;
+  setSelectedPage: (value: number) => void;
 }
+
 
 const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   const flexBetween = 'flex items-center justify-between';
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
   const navbarBackground = isTopOfPage ? "" : "bg-teal-600 drop-shadow";
-
-  const Links = ['Home', 'About Us', 'Benefits', 'Our Classes', 'Contact Us'];
+  const Links = Object.values(SelectedPage);
 
   return (
     <nav>

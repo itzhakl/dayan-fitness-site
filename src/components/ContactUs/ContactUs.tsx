@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import ContactUsPageGraphic from '@/assets/ContactUsPageGraphic.png';
 
 type Props = {
-    setSelectedPage: (value: SelectedPage) => void;
+    setSelectedPage: (value: number) => void;
 }
 
 const ContactUs = ({setSelectedPage}: Props) => {
@@ -19,12 +19,12 @@ const ContactUs = ({setSelectedPage}: Props) => {
   }
 
   return (
-    <section id='contactus' className="w-5/6 mx-auto pt-24 pb-32">
-        <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.ContactUs)} >
+    <section id='contactus' className="w-5/6 h-screen mx-auto pt-24 pb-32">
+        <motion.div onViewportEnter={() => setSelectedPage(Object.values(SelectedPage).indexOf(SelectedPage.ContactUs))} >
             {/* Header */}
             <motion.div className="md:w-3/5" initial='hidden' whileInView='visible' viewport={{once: true, amount: 0.5}} transition={{duration: 0.5}} variants={{hidden: {opacity: 0, x:-50}, visible: {opacity:1, x:0}}}>
-                <HText><span className="text-primary-500">Join now</span>{" "}to get in shape</HText>
-                <p className="my-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti sint, magnam atque dolor accusamus omnis iste quam quidem adipisci, sed beatae illum vel perferendis natus? Asperiores facere aliquam odit ipsum voluptas ullam repellat dolor eaque corporis rem, corrupti voluptates neque.</p>
+                <HText><span className="text-primary-500">הצטרף עכשיו</span>{" "}כדי להיכנס לכושר</HText>
+                <p className="my-5">אתה בטוח רוצה להתחיל את המסע לכושר הטוב ביותר! כדי להתחיל, פשוט השאר את הפרטים שלך כאן. אנו ניצור איתך קשר בהקדם על מנת לספק לך את המידע והתמיכה שאתה צריך כדי להתחיל להרגיש טוב ולהתקדם בדרך שלך לכושר מיטבי. נשמח לסייע לך להגשים את היעדים שלך!</p>
             </motion.div>
 
             {/* Form and Image */}

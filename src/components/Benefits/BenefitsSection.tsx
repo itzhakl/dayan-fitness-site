@@ -1,10 +1,9 @@
 import { BenefitType, SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
-import AnchorLink from "react-anchor-link-smooth-scroll";
-
+import { Link as LinkScroll } from 'react-scroll/modules';
 type Props = {
     benefit: BenefitType;
-    setSelectedPage: (value: SelectedPage) => void;
+    setSelectedPage: (value: number) => void;
 }
 
 const childVariant = {
@@ -23,7 +22,7 @@ const BenefitsSection = ({benefit, setSelectedPage}: Props) => {
         </div>
         <h4 className="font-bold">{benefit.title}</h4>
         <p className="my-3">{benefit.description}</p>
-        <AnchorLink href={`${SelectedPage.ContactUs}`} className='text-sm font-bold text-primary-500 underline hover:text-secondary-500 cursor-pointer' onClick={() => setSelectedPage(SelectedPage.ContactUs)} ><p>Learn More</p></AnchorLink>
+        <LinkScroll smooth duration={1000} to={SelectedPage.ContactUs} className='text-sm font-bold text-primary-500 underline hover:text-secondary-500 cursor-pointer' onClick={() => setSelectedPage(Object.values(SelectedPage).indexOf(SelectedPage.ContactUs))} ><p>Learn More</p></LinkScroll>
     </motion.div>
   );
 }

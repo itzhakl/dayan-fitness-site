@@ -3,7 +3,8 @@ export enum SelectedPage {
     AboutUs = 'aboutus',
     Benefits = 'benefits',
     OurClasses = 'ourclasses',
-    ContactUs = 'contactus'
+    ContactUs = 'contactus',
+    Footer = 'footer'
 }
 
 export enum HebrewDisplayName {
@@ -12,6 +13,7 @@ export enum HebrewDisplayName {
   benefits = 'יתרונות',
   ourclasses = 'השיעורים שלנו',
   contactus = 'צור קשר',
+  footer = 'פרטים',
   SignIn = 'הכנס',
   BecomeAMember = 'הפוך לחבר',
 }

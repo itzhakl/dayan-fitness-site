@@ -7,18 +7,21 @@ import Ourclasses from '@/components/OurClasses/Ourclasses';
 import ContactUs from '@/components/ContactUs/ContactUs';
 import Footer from '@/components/Footer/Footer';
 import AboutUs from '@/components/AboutUs/AboutUs';
+import ScrollListener from './ScrollListener'
 
 function App() {
-  const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home);
+  const [selectedPage, setSelectedPage] = useState<number>(0);
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
+  const pageIds = Object.values(SelectedPage);
+
+  // ScrollListener({selectedPage, setSelectedPage, pageIds });
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY === 0) {
         setIsTopOfPage(true);
-        setSelectedPage(SelectedPage.Home);
-      }
-      if (window.scrollY !== 0) setIsTopOfPage(false);
+        setSelectedPage(pageIds.indexOf(SelectedPage.Home));
+      } else setIsTopOfPage(false);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);

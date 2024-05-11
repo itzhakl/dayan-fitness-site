@@ -7,7 +7,7 @@ import ActionButton from '@/shared/ActionButton';
 import BenefitsPageGraphic from '@/assets/BenefitsPageGraphic.png'
 
 type Props = {
-  setSelectedPage: (value: SelectedPage) => void;
+  setSelectedPage: (value: number) => void;
 }
 
 const container = {
@@ -19,8 +19,8 @@ const container = {
 
 const Benefits = ({setSelectedPage}: Props) => {
   return (
-    <section id='benefits' className='mx-auto min-h-full py-20 w-5/6'>
-      <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.Benefits)}>
+    <section id='benefits' className='mx-auto min-h-full h-screen py-20 w-5/6'>
+      <motion.div onViewportEnter={() => setSelectedPage(Object.values(SelectedPage).indexOf(SelectedPage.Benefits))}>
 
         {/* Header */}
         <motion.div className='md:my-5 md:w-3/5'
@@ -60,14 +60,14 @@ const Benefits = ({setSelectedPage}: Props) => {
               </div>
 
               {/* description */}
-              <motion.div initial='hidden' whileInView='visible' viewport={{once: true, amount: 0.5}} transition={{delay: 0.2, duration: 0.5}} variants={{hidden: {opacity: 0, x: -50}, visible: {opacity:1, x:0}}} >
+              {/* <motion.div initial='hidden' whileInView='visible' viewport={{once: true, amount: 0.5}} transition={{delay: 0.2, duration: 0.5}} variants={{hidden: {opacity: 0, x: -50}, visible: {opacity:1, x:0}}} >
                 <p className='my-5'>
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi non, consectetur sit facilis fugit quaerat provident! Non, quaerat voluptatum voluptas, sint totam culpa atque eligendi eveniet labore et facere, inventore provident quas itaque ratione? Quia cumque veritatis adipisci, dolorum rem ab odio nemo ipsum doloribus, expedita voluptate quibusdam eos unde.
                 </p>
                 <p className='mb-5'>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad temporibus quam nesciunt dolore sequi ut facilis enim, molestias exercitationem debitis vero placeat in fuga eligendi cupiditate officiis minima doloribus minus.
                 </p>
-              </motion.div>
+              </motion.div> */}
 
               {/* button */}
               <div className='relative mt-16'>
