@@ -5,10 +5,10 @@ type Props = {
 }
 
 const Class = ({item}: Props) => {
-  const overlayStyles = `p-5 absolute z-20 flex flex-col h-[450px] w-[380px] items-center justify-center whitespace-normal bg-primary-500 text-center text-white opacity-0 transition duration-500 hover:opacity-90`;
+  const overlayStyles = `p-5 absolute z-20 flex flex-col h-[400px] w-[200px] items-center justify-center whitespace-normal bg-primary-500 text-center text-white opacity-0 transition duration-500 hover:opacity-90`;
   const isImage = item.image.includes('.jpeg')
   return (
-    <li className="relative mx-5 inline-block h-[450px] w-[380px]" >
+    <li className="relative mx-5 inline-block h-[400px] w-[200px]" >
         <div className={overlayStyles}>
             <p className="text-2xl font-bold">{item.name}</p>
             <p className="mt-5">{item.description}</p>

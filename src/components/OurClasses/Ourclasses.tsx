@@ -10,8 +10,10 @@ type Props = {
 
 const Ourclasses = ({setSelectedPage}: Props) => {
   return (
-    <section id='ourclasses' className="w-full bg-teal-600 py-40">
-        <motion.div onViewportEnter={() => setSelectedPage(Object.values(SelectedPage).indexOf(SelectedPage.OurClasses))} >
+    <section id='ourclasses' className="w-full h-screen bg-teal-600 py-40">
+        <motion.div
+        onViewportEnter={() => setSelectedPage(Object.values(SelectedPage).indexOf(SelectedPage.OurClasses))}
+        >
             <motion.div className="mx-auto w-5/6" initial='hidden' whileInView='visible' viewport={{once: true, amount: 0.5}} transition={{duration: 0.5}} variants={{hidden: {opacity: 0, x: -50}, visible: {opacity:1, x:0}}}>
                 <div className="md:w-3/5">
                     <HText>our classes</HText>

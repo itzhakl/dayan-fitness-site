@@ -20,7 +20,9 @@ const ContactUs = ({setSelectedPage}: Props) => {
 
   return (
     <section id='contactus' className="w-5/6 h-screen mx-auto pt-24 pb-32">
-        <motion.div onViewportEnter={() => setSelectedPage(Object.values(SelectedPage).indexOf(SelectedPage.ContactUs))} >
+        <motion.div
+          onViewportEnter={() => setSelectedPage(Object.values(SelectedPage).indexOf(SelectedPage.ContactUs))}
+          >
             {/* Header */}
             <motion.div className="md:w-3/5" initial='hidden' whileInView='visible' viewport={{once: true, amount: 0.5}} transition={{duration: 0.5}} variants={{hidden: {opacity: 0, x:-50}, visible: {opacity:1, x:0}}}>
                 <HText><span className="text-primary-500">הצטרף עכשיו</span>{" "}כדי להיכנס לכושר</HText>
@@ -63,11 +65,11 @@ const ContactUs = ({setSelectedPage}: Props) => {
                         <button type='submit' className="mt-5 rounded-lg bg-secondary-500 px-20 py-3 transition duration-500 hover:text-white">שלח</button>
                     </form>
                 </motion.div>
-                <motion.div className="relative mt-16 basis-2/5 md:mt-0" initial='hidden' whileInView='visible' viewport={{once: true, amount: 0.5}} transition={{delay: 0.2, duration: 0.5}} variants={{hidden: {opacity: 0, y:50}, visible: {opacity:1, y:0}}}>
+                {/* <motion.div className="relative mt-16 basis-2/5 md:mt-0" initial='hidden' whileInView='visible' viewport={{once: true, amount: 0.5}} transition={{delay: 0.2, duration: 0.5}} variants={{hidden: {opacity: 0, y:50}, visible: {opacity:1, y:0}}}>
                     <div className="md:before:content-evolvetext w-full before:absolute before:-bottom-20 before:-right-10 before:z-[-1]">
                         <img src={ContactUsPageGraphic} alt="contactus-graphics" />
                     </div>
-                </motion.div>
+                </motion.div> */}
             </div>
         </motion.div>
     </section>

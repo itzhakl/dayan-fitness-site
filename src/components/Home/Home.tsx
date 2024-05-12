@@ -19,7 +19,9 @@ const Home = ({ setSelectedPage }: Props) => {
   return (
     <section id='home' className='gap-16 py-10 w-screen h-screen md:pb-0' >
       {/* Images & Header */}
-      <motion.div className='md:flex mx-auto w-5/6 items-center justify-center md:h-5/6' onViewportEnter={() => setSelectedPage(Object.values(SelectedPage).indexOf(SelectedPage.Home))}>
+      <motion.div className='md:flex mx-auto w-5/6 items-center justify-center md:h-5/6'
+      onViewportEnter={() => setSelectedPage(Object.values(SelectedPage).indexOf(SelectedPage.Home))}
+      >
         {/* Image */}
         <div className='flex basis-3/5 justify-center md:z-[10] md:ml-40 md:mt-16 md:justify-items-end'>
           <img src={HomePageGraphic} alt="home-page-graphic" />
@@ -30,9 +32,9 @@ const Home = ({ setSelectedPage }: Props) => {
           <motion.div className='md:-mt-20' initial='hidden' whileInView='visible' viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }} variants={{ hidden: { opacity: 0, x: -50 }, visible: { opacity: 1, x: 0 } }}>
             <div className='relative'>
               {/* using before: to position something relative to other */}
-              <div className='before:absolute before:-top-20 before:-left-20 before:z-[-1] md:before:content-evolvetext'>
+              {/* <div className='before:absolute before:-top-20 before:-left-20 before:z-[-1] md:before:content-evolvetext'>
                 <img src={HomePageText} alt="home-page-text" />
-              </div>
+              </div> */}
             </div>
             <p className='text-sm mt-8'>
               {'ברוכים הבאים לסטודיו כושר דיין - המקום שבו תגלו את הגרסה הטובה ביותר של עצמכם! באתר שלנו, נציע לך חוויה מעוררת השראה ומגוונת בתרגולים ופעילויות כושר. ניתן למצוא אצלנו מגוון רחב של שיעורי כושר, כולל סטים מותאמים אישית, אימוני TRX, יוגה, ועוד. בנוסף, צוות המדריכים המקצועי שלנו יסייע לך להשיג את היעדים האישיים שלך בדרך הכי יעילה ומהנה. הצטרפו אלינו ותחוו את השינוי שתמיד רציתם!'}
