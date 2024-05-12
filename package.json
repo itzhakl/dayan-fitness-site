@@ -5,11 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "copy-files1": "copyfiles nagishli_beta.js  dist",
+    "copy-files2": "copyfiles nagishli-files/**/*  dist/",
+    "build": "tsc && vite build && npm run copy-files1 && npm run copy-files2", 
     "preview": "vite preview"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.13",
+    "copyfiles": "^2.4.1",
     "framer-motion": "^8.5.0",
     "jQuery": "^1.7.4",
     "react": "^18.2.0",
