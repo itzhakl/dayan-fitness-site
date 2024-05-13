@@ -5,6 +5,8 @@ import { benefits } from './data';
 import BenefitsSection from './BenefitsSection';
 import ActionButton from '@/shared/ActionButton';
 import BenefitsPageGraphic from '@/assets/BenefitsPageGraphic.png'
+import { Element } from "react-scroll";
+
 
 type Props = {
   setSelectedPage: (value: number) => void;
@@ -19,7 +21,8 @@ const container = {
 
 const Benefits = ({ setSelectedPage }: Props) => {
   return (
-    <section id='benefits' className='mx-auto h-screen py-20 w-5/6'>
+    <Element name='benefits'>
+    <section id='' className='mx-auto snap-start h-screen py-20 w-5/6'>
       <motion.div
         onViewportEnter={() => setSelectedPage(Object.values(SelectedPage).indexOf(SelectedPage.Benefits))}
       >
@@ -83,6 +86,7 @@ const Benefits = ({ setSelectedPage }: Props) => {
         </div>
       </motion.div>
     </section>
+    </Element>
   );
 }
 

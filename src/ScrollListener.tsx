@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { set } from 'react-hook-form';
 import { Events, scroller, animateScroll } from 'react-scroll';
 import { SelectedPage } from './shared/types';
+import { log } from 'console';
 
 interface ScrollPagesOptions {
   pageIds: string[];
@@ -11,20 +12,27 @@ interface ScrollPagesOptions {
 
 const useScrollPages = ({ selectedPage, setSelectedPage, pageIds }: ScrollPagesOptions) => {
   const prevScrollY = useRef<number>(0);
-  const [dontScroll, setDontScroll] = useState<boolean>(false);
+  const scroll = useRef<boolean>(false);
 
   useEffect(() => {
-    console.log('selectedPage', Object.values(SelectedPage)[selectedPage]);
-    scroller.scrollTo(pageIds[selectedPage], {
-      duration: 1000,
-      delay: 0,
-      smooth: true,
-    });
-  }, [selectedPage])
+    const scrollToId = () => {
+      console.log('selectedPage', pageIds[selectedPage]);
+      console.log("a",window.scrollY);
+
+      scroller.scrollTo(pageIds[selectedPage], {
+        duration: 500,
+        delay: 0,
+        smooth: true,
+      });
+    };
+    scrollToId();
+  }, [scroll.current])
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
-      setDontScroll(p => !p)
+    window.addEventListener('scrollend', () => {
+      
+      console.log(scroll.current);
+      scroll.current = !scroll.current
     })
   }, [])
 

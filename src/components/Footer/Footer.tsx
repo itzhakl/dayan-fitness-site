@@ -1,6 +1,8 @@
 import Logo from '@/assets/Logo.png';
 import { HebrewDisplayName, SelectedPage } from '@/shared/types';
 import { motion } from 'framer-motion';
+import { Element } from "react-scroll";
+
 
 type Props = {
   setSelectedPage: (value: number) => void;
@@ -8,9 +10,10 @@ type Props = {
 
 const Footer = ({ setSelectedPage }: Props ): JSX.Element => {
   return (
-    <section id='footer' className='bg-teal-600 h-screen py-16'>
+    <Element name='footer'>
+    <section id='' className='bg-teal-600 snap-start h-screen py-16'>
       <motion.div
-        onViewportEnter={() => setSelectedPage(Object.values(SelectedPage).indexOf(SelectedPage.OurClasses))}
+        onViewportEnter={() => setSelectedPage(Object.values(SelectedPage).indexOf(SelectedPage.Footer))}
         className='w-5/6 mx-auto gap-16 md:flex'>
         <div className="mt-16 basis-1/4 md:mt-0">
           <h4 className="font-bold">{'פרטים'}</h4>
@@ -42,6 +45,7 @@ const Footer = ({ setSelectedPage }: Props ): JSX.Element => {
         </div>
       </motion.div>
     </section>
+    </Element>
   );
 }
 

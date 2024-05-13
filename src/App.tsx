@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Navbar from '@/components/Navbar/Navbar';
 import { SelectedPage } from '@/shared/types';
 import Home from '@/components/Home/Home';
@@ -14,7 +14,8 @@ function App() {
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
   const pageIds = Object.values(SelectedPage);
 
-  ScrollListener({selectedPage, setSelectedPage, pageIds });
+
+  // ScrollListener({selectedPage, setSelectedPage, pageIds });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,9 +29,16 @@ function App() {
   }, []);
 
   return (
-    <div dir='rtl' className="app bg-black overflow-x-scroll no-scrollbar text-teal-200">
+    <div dir='rtl' className="app bg-black text-teal-200"
+    style={{
+      // // overflowY: 'scroll', 
+      // scrollSnapType: 'y mandatory', 
+      // height: '100vh', 
+      // scrollBehavior: "smooth" 
+    }}
+    >
       <Navbar isTopOfPage={isTopOfPage} selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
-      <Home setSelectedPage={setSelectedPage} />
+      <Home setSelectedPage={setSelectedPage}/>
       <AboutUs setSelectedPage={setSelectedPage} />
       <Benefits setSelectedPage={setSelectedPage} />
       <Ourclasses setSelectedPage={setSelectedPage} />
