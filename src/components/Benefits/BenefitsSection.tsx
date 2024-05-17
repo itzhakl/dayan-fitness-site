@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link as LinkScroll } from 'react-scroll/modules';
 type Props = {
     benefit: BenefitType;
-    setSelectedPage: (value: number) => void;
+    setSelectedPage: (value: string) => void;
 }
 
 const childVariant = {
@@ -13,7 +13,7 @@ const childVariant = {
 
 const BenefitsSection = ({benefit, setSelectedPage}: Props) => {
   return (
-    <motion.div className="mt-5 rounded-md border-2 border-gray-100 px-5 py-16 text-center"
+    <motion.div className="mt-5 mx-auto w-auto rounded-md border-2 border-gray-100 px-5 py-16 text-center"
         variants={childVariant} >
         <div className="mb-4 flex justify-center">
             <div className="rounded-full border-2 border-gray-100 bg-teal-600 p-4">
@@ -21,8 +21,8 @@ const BenefitsSection = ({benefit, setSelectedPage}: Props) => {
             </div>
         </div>
         <h4 className="font-bold">{benefit.title}</h4>
-        <p className="my-3">{benefit.description}</p>
-        <LinkScroll smooth duration={1000} to={SelectedPage.ContactUs} className='text-sm font-bold text-primary-500 underline hover:text-secondary-500 cursor-pointer' onClick={() => setSelectedPage(Object.values(SelectedPage).indexOf(SelectedPage.ContactUs))} ><p>Learn More</p></LinkScroll>
+        <p className="my-3 text-wrap">{benefit.description}</p>
+        <LinkScroll smooth duration={1000} to={SelectedPage.ContactUs} className='text-sm font-bold text-primary-500 underline hover:text-secondary-500 cursor-pointer' onClick={() => setSelectedPage(SelectedPage.ContactUs)} ><p>צור קשר</p></LinkScroll>
     </motion.div>
   );
 }

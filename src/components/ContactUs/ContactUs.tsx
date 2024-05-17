@@ -5,11 +5,11 @@ import { useForm } from "react-hook-form";
 import ContactUsPageGraphic from '@/assets/ContactUsPageGraphic.png';
 
 type Props = {
-    setSelectedPage: (value: number) => void;
+    setSelectedPage: (value: string) => void;
 }
 
 const ContactUs = ({setSelectedPage}: Props) => {
-  const inputStyle = `w-full mb-5 rounded-lg bg-primary-300 px-5 py-3 placeholder-white`;
+  const inputStyle = `w-full snap-start mb-5 rounded-lg bg-primary-300 px-5 py-3 placeholder-white`;
   const { register, trigger, formState: { errors } } = useForm();
   const handleOnSubmit = async (e: any) => {
     const isValid = await trigger();
@@ -21,7 +21,7 @@ const ContactUs = ({setSelectedPage}: Props) => {
   return (
     <section id='contactus' className="w-5/6 h-screen mx-auto pt-24 pb-32">
         <motion.div
-          onViewportEnter={() => setSelectedPage(Object.values(SelectedPage).indexOf(SelectedPage.ContactUs))}
+          onViewportEnter={() => setSelectedPage(SelectedPage.ContactUs)}
           >
             {/* Header */}
             <motion.div className="md:w-3/5" initial='hidden' whileInView='visible' viewport={{once: true, amount: 0.5}} transition={{duration: 0.5}} variants={{hidden: {opacity: 0, x:-50}, visible: {opacity:1, x:0}}}>

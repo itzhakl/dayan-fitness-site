@@ -7,20 +7,20 @@ import Ourclasses from '@/components/OurClasses/Ourclasses';
 import ContactUs from '@/components/ContactUs/ContactUs';
 import Footer from '@/components/Footer/Footer';
 import AboutUs from '@/components/AboutUs/AboutUs';
-import ScrollListener from './ScrollListener'
+// import ScrollListener from './ScrollListener'
 
 function App() {
-  const [selectedPage, setSelectedPage] = useState<number>(0);
+  const [selectedPage, setSelectedPage] = useState<string>(SelectedPage.Home);
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
-  const pageIds = Object.values(SelectedPage);
+  // const pageIds = Object.values(SelectedPage);
 
-  ScrollListener({selectedPage, setSelectedPage, pageIds });
+  // ScrollListener({selectedPage, setSelectedPage, pageIds });
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY === 0) {
         setIsTopOfPage(true);
-        setSelectedPage(pageIds.indexOf(SelectedPage.Home));
+        setSelectedPage(SelectedPage.Home);
       } else setIsTopOfPage(false);
     };
     window.addEventListener("scroll", handleScroll);
@@ -28,9 +28,11 @@ function App() {
   }, []);
 
   return (
-    <div dir='rtl' className="app bg-black overflow-x-scroll no-scrollbar text-teal-200">
-      <Navbar isTopOfPage={isTopOfPage} selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
-      <Home setSelectedPage={setSelectedPage} />
+    <div dir='rtl'
+      className="app bg-black text-teal-200"
+    >
+      <Navbar isTopOfPage={isTopOfPage} selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+      <Home selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
       <AboutUs setSelectedPage={setSelectedPage} />
       <Benefits setSelectedPage={setSelectedPage} />
       <Ourclasses setSelectedPage={setSelectedPage} />

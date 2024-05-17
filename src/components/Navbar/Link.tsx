@@ -3,16 +3,25 @@ import { HebrewDisplayName, SelectedPage } from '@/shared/types';
 
 type Props = {
   page: string;
-  selectedPage: number;
-  setSelectedPage: (value: number) => void;
+  selectedPage: string;
+  setSelectedPage: (value: string) => void;
+  setIsMenuToggled?: (value: boolean) => void;
 }
 
-const Link = ({ page, selectedPage, setSelectedPage }: Props) => {
+const Link = ({ page, selectedPage, setSelectedPage, setIsMenuToggled }: Props) => {
   const lowerCasePage = page.toLowerCase().replace(/ /g, '') as SelectedPage;
   const selectedPagesArray = Object.values(SelectedPage);
   return (
-    <LinkScroll smooth duration={1000} to={lowerCasePage} onClick={() => setSelectedPage(selectedPagesArray.indexOf(lowerCasePage))} className={`${selectedPagesArray[selectedPage] === lowerCasePage ? "text-primary-500" : ""} transition cursor-pointer duration-500 hover:text-primary-300`}>
-        {HebrewDisplayName[lowerCasePage]}
+    <LinkScroll smooth
+      duration={1000}
+      to={lowerCasePage}
+      className={`${selectedPage === lowerCasePage ? "text-primary-500" : ""} transition cursor-pointer duration-500 hover:text-primary-300`}
+      onClick={() => { 
+        setSelectedPage(lowerCasePage); 
+        setIsMenuToggled && setIsMenuToggled(false);
+      }}
+    >
+      {HebrewDisplayName[lowerCasePage]}
     </LinkScroll>
   );
 }

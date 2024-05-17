@@ -8,8 +8,8 @@ import ActionButton from "@/shared/ActionButton";
 
 type Props = {
   isTopOfPage: boolean;
-  selectedPage: number;
-  setSelectedPage: (value: number) => void;
+  selectedPage: string;
+  setSelectedPage: (value: string) => void;
 }
 
 
@@ -42,7 +42,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                 {/* Sign In + Button */}
                 <div className={`${flexBetween} gap-8`}>
                   {/* <p>{HebrewDisplayName['SignIn']}</p> */}
-                  <ActionButton setSelectedPage={setSelectedPage}>{HebrewDisplayName['BecomeAMember']}</ActionButton>
+                  <ActionButton selectedPage={selectedPage}>{HebrewDisplayName['BecomeAMember']}</ActionButton>
                 </div>
               </div>) : (
               <button title="MenuToggle" className='rounded-full bg-secondary-500 p-2' onClick={() => setIsMenuToggled(!isMenuToggled)}>
@@ -50,7 +50,9 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
               </button>
             )}
             {/*Left Side  */}
-            <img height='50px' width='50px' src={Logo} alt="logo" />
+            <ActionButton className="cursor-pointer" selectedPage={SelectedPage.Home}>
+              <img height='50px' width='50px' src={Logo} alt="logo" />
+            </ActionButton>
           </div>
         </div>
       </div>
@@ -69,6 +71,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
             <div className="flex flex-col text-right mr-[25%] gap-8 text-2xl">
               {Links.map(page => (
                 <Link
+                  setIsMenuToggled={setIsMenuToggled}
                   key={page}
                   page={page}
                   selectedPage={selectedPage}
