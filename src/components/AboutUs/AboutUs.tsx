@@ -1,6 +1,8 @@
 import { SelectedPage } from '@/shared/types';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import { motion } from 'framer-motion';
+import { Element } from "react-scroll";
+
 import { ABOUT_US } from '@/shared/pageTexts';
 
 type Props = {
@@ -10,7 +12,8 @@ type Props = {
 const AboutUs = ({ setSelectedPage }: Props) => {
   const isAboveMediumScreens = useMediaQuery('(min-width:1060px)');
   return (
-    <section id='aboutus' className='gap-16 snap-start py-10 h-auto md:pb-0' >
+    <Element name='aboutus'>
+    <section id='' className='gap-16 snap-start py-10 h-screen md:pb-0' >
       {/* Images & Header */}
       <motion.div
         className='md:flex mx-auto w-5/6 items-center justify-center md:h-5/6'
@@ -57,6 +60,7 @@ const AboutUs = ({ setSelectedPage }: Props) => {
         </div>
       </motion.div>
     </section>
+    </Element>
   );
 }
 

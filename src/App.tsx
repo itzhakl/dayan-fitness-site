@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Navbar from '@/components/Navbar/Navbar';
 import { SelectedPage } from '@/shared/types';
 import Home from '@/components/Home/Home';

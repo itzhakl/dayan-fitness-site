@@ -8,6 +8,7 @@ import SponsorRedBull from '@/assets/SponsorRedBull.png';
 import SponsorForbes from '@/assets/SponsorForbes.png';
 import SponsorFortune from '@/assets/SponsorFortune.png';
 import { motion } from 'framer-motion';
+import { Element } from "react-scroll";
 import { HOME_TEXT, JOIN_NOW, LEARN_MORE } from '@/shared/pageTexts';
 
 type Props = {
@@ -19,7 +20,8 @@ const Home = ({ selectedPage, setSelectedPage }: Props) => {
   const isAboveMediumScreens = useMediaQuery('(min-width:1060px)');
 
   return (
-    <section id='home' className='gap-16 snap-start py-10 h-screen md:pb-0' >
+    <Element name='home'>
+    <section id='' className='gap-16 snap-start py-10 w-screen h-screen md:pb-0' >
       {/* Images & Header */}
       <motion.div className='md:flex mx-auto w-5/6 items-center justify-center md:h-5/6'
         onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
@@ -68,6 +70,7 @@ const Home = ({ selectedPage, setSelectedPage }: Props) => {
         </div>
       )}
     </section>
+    </Element>
   );
 }
 

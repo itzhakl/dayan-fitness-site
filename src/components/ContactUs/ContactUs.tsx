@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import HText from "@/shared/HText";
 import { useForm } from "react-hook-form";
 import ContactUsPageGraphic from '@/assets/ContactUsPageGraphic.png';
+import { Element } from "react-scroll";
+
 
 type Props = {
     setSelectedPage: (value: string) => void;
@@ -19,7 +21,8 @@ const ContactUs = ({setSelectedPage}: Props) => {
   }
 
   return (
-    <section id='contactus' className="w-5/6 h-screen mx-auto pt-24 pb-32">
+    <Element name="contactus">
+    <section id='' className="w-5/6 snap-start h-screen mx-auto pt-24 pb-32">
         <motion.div
           onViewportEnter={() => setSelectedPage(SelectedPage.ContactUs)}
           >
@@ -73,6 +76,7 @@ const ContactUs = ({setSelectedPage}: Props) => {
             </div>
         </motion.div>
     </section>
+    </Element>
   );
 }
 

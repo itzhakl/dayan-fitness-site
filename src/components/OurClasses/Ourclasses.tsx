@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import HText from "@/shared/HText";
 import { datas } from "./data";
 import Class from "./Class";
+import { Element } from "react-scroll";
+
 
 type Props = {
   setSelectedPage: (value: string) => void;
@@ -10,7 +12,8 @@ type Props = {
 
 const Ourclasses = ({ setSelectedPage }: Props) => {
   return (
-    <section id='ourclasses' className="snap-start h-auto bg-teal-600 py-40">
+    <Element name="ourclasses">
+    <section id='' className="snap-start h-auto bg-teal-600 py-40">
       <motion.div
         onViewportEnter={() => setSelectedPage(SelectedPage.OurClasses)}
       >
@@ -62,6 +65,7 @@ const Ourclasses = ({ setSelectedPage }: Props) => {
         </div>
       </motion.div>
     </section>
+    </Element>
   );
 }
 
