@@ -7,7 +7,7 @@
     "dev": "vite",
     "copy-files1": "copyfiles nagishli_beta.js  dist",
     "copy-files2": "copyfiles nagishli-files/**/*  dist/",
-    "build": "tsc && vite build && npm run copy-files1 && npm run copy-files2",
+    "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
