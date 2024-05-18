@@ -21,7 +21,7 @@ const Home = ({ selectedPage, setSelectedPage }: Props) => {
 
   return (
     <Element name='home'>
-    <section id='' className='gap-16 snap-start py-10 w-screen h-screen md:pb-0' >
+    <section id='' className='gap-16 snap-start py-10 h-screen md:pb-0' >
       {/* Images & Header */}
       <motion.div className='md:flex mx-auto w-5/6 items-center justify-center md:h-5/6'
         onViewportEnter={() => setSelectedPage(SelectedPage.Home)}

@@ -22,13 +22,13 @@ const container = {
 const Benefits = ({ setSelectedPage }: Props) => {
   return (
     <Element name='benefits'>
-    <section id='' className='mx-auto snap-start h-screen py-20 w-5/6'>
+    <section id='' className='mx-auto snap-start py-20 w-5/6'>
       <motion.div
         onViewportEnter={() => setSelectedPage(SelectedPage.Benefits)}
       >
 
         {/* כותרת */}
-        <motion.div className='md:my-5 md:w-3/5'
+        <motion.div className='md:my-5 my-10 md:w-3/5'
           initial='hidden' whileInView='visible' viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }} variants={{ hidden: { opacity: 0, x: -50 }, visible: { opacity: 1, x: 0 } }} >
           <HText>יותר מסתם סטודיו</HText>
           <p className='my-5 text-sm'>
@@ -39,7 +39,8 @@ const Benefits = ({ setSelectedPage }: Props) => {
         </motion.div>
 
         {/* יתרונות */}
-        <motion.div className='md:flex whitespace-nowrap overflow-x-auto overflow-y-hidden items-center justify-between gap-8 mt-5'
+        <motion.div 
+        className='flex whitespace-nowrap overflow-x-auto overflow-y-hidden items-center justify-between gap-8 mt-5'
           initial='hidden' whileInView='visible' viewport={{ once: true, amount: 0.5 }} variants={container} >
           {
             benefits.map((benefit) => (
