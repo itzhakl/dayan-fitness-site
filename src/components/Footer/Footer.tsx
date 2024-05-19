@@ -11,6 +11,7 @@ import {
     Mail as MailIcon,
     Copyright as CopyrightIcon
 } from '@mui/icons-material';
+import Waze from '../../assets/svg/waze.svg'
 import { Element } from "react-scroll";
 
 
@@ -21,7 +22,7 @@ type Props = {
 const Footer = ({ setSelectedPage }: Props): JSX.Element => {
     return (
         <Element name='footer'>
-            <section id='footer' className='bg-teal-600 snap-start py-16'>
+            <section id='footer' className='bg-teal-600 snap-start pt-16'>
                 <motion.div
                     onViewportEnter={() => setSelectedPage(SelectedPage.Footer)}
                     className='w-5/6 mx-auto gap-16 md:flex'>
@@ -35,7 +36,7 @@ const Footer = ({ setSelectedPage }: Props): JSX.Element => {
                         <div className="div">
                             <span className='my-5'>{'הרב דנגור 22, בני ברק'}</span>
                             <a title='google-maps' target='blank' href='https://maps.app.goo.gl/mXrVZZww2EHSCzmJ8'><RoomOutlinedIcon /></a>
-                            <a title='waze' target='blank' href='https://ul.waze.com/ul?place=ChIJeSGzyhxLHRURTWWC5iP_iZM&ll=32.09687890%2C34.83111380&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location'><RoomOutlinedIcon /></a>
+                            <a title='waze' target='blank' href='https://ul.waze.com/ul?place=ChIJeSGzyhxLHRURTWWC5iP_iZM&ll=32.09687890%2C34.83111380&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location'><Waze/></a>
                         </div>
                         <div className="div">
                             <p className='my-5'><a title='mail' target='blank' href='mailto:hid0504154438@gmail.com'>{'hid0504154438@gmail.com'}</a></p>
@@ -53,11 +54,8 @@ const Footer = ({ setSelectedPage }: Props): JSX.Element => {
                         <p className="my-5"><a target='blank' href='https://podcasts.apple.com/podcast/id1623819552?app=podcast&at=1000lHKX&ct=linktree_http&itscg=30200&itsct=lt_p&ls=1&mt=2'>{'@apple podcast'}</a></p>
                     </div>
                     <img className='w-[50px] h-[50px]' height='50px' width='50px' src={Logo} alt="footer-logo" />
-                    <CopyrightIcon className='fixed right-0 bottom-0 m-2'>
-                        <p>© נבנה על ידי יצחק לשינסקי</p>
-                        <a href='tel:+972535561849'>053-556-1849</a>
-                    </CopyrightIcon>
                 </motion.div>
+                    
             </section>
         </Element>
     );

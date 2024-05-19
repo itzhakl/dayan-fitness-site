@@ -2,39 +2,54 @@ import image1 from '@/assets/image1.jpeg';
 import image2 from '@/assets/image2.jpeg';
 import image3 from '@/assets/image3.jpeg';
 import image4 from '@/assets/image4.jpeg';
-import image5 from '@/assets/video1.mp4';
-// import image6 from '@/assets/image6.png';
+import video from '@/assets/video1.mp4';
 import { DatasType } from '@/shared/types';
 
 export const datas: Array<DatasType> = [
-    {
-        name: 'Weight Training Classess',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas enim cum necessitatibus id aliquam reiciendis.',
-        image: image1
-    },
-    {
-        name: 'Yoga Classess',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas enim cum necessitatibus id aliquam reiciendis.',
-        image: image2
-    },
-    {
-        name: 'Ab Core Classess',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas enim cum necessitatibus id aliquam reiciendis.',
-        image: image3
-    },
-    {
-        name: 'Adventure Classess',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas enim cum necessitatibus id aliquam reiciendis.',
-        image: image4
-    },
-    {
-        name: 'Fitness Classess',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas enim cum necessitatibus id aliquam reiciendis.',
-        image: image5
-    },
-    // {
-    //     name: 'Training Classess',
-    //     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas enim cum necessitatibus id aliquam reiciendis.',
-    //     image: image6
-    // },
-]
+  {
+      name: 'שיעורי אימון משקולות',
+      description: 'שיעורי אימון משקולות שמתאימים למי שרוצה להתחזק ולהגביר את המסה השרירית.',
+      image: image1
+  },
+  {
+      name: 'שיעורי יוגה',
+      description: 'שיעורי יוגה להרגעת הגוף והנפש, לשיפור הגמישות והאיזון.',
+      image: image2
+  },
+  {
+      name: 'שיעורי חיזוק ליבת הבטן',
+      description: 'שיעורי חיזוק ליבת הבטן לשיפור הכוח והיציבה של שרירי הבטן.',
+      image: image3
+  },
+  {
+      name: 'שיעורי הרפתקאות',
+      description: 'שיעורי הרפתקאות לשיפור הכושר הגופני דרך פעילויות מאתגרות ומהנות.',
+      image: image4
+  },
+  {
+      name: 'שיעורי כושר',
+      description: 'שיעורי כושר כלליים לשיפור הכושר הגופני והבריאות הכללית.',
+      image: video
+  }
+];
+
+export const trainingPlansTitle = 'מסלולי האימונים שלנו'
+
+export const trainingPlans = [
+  {
+    title: "אימונים אישיים 1 על 1",
+    text: "האימון מתאים לאלו מכם שלא מתפשרים ומשקיעים באימון ברמה גבוהה + התאמה אישית (אבל באמת) בדיוק בשביל המטרות, אורח החיים ושעות האימונים שלכם."
+  },
+  {
+    title: "אימונים זוגיים",
+    text: "אימון שמתאים למי שרוצה לאחד כוחות ולהתאמן יחד עם בן/ בת הזוג או חבר.ה משקיענים כמוך. איך אומרים, לפעמים \"טובים השניים מהאחד\" [ותכל'ס זה גם מוזל יותר…]"
+  },
+  {
+    title: "אימוני קבוצות בוטיק (לנשים בלבד)",
+    text: "אימון שמתאים למי שבאמת רוצה להתחזק, לשפר הרכב גוף ולהטעין כוחות ועל הדרך לעשות את זה יחד עם 4-5 בנות. אימון קבוצה ביחס אישי ורמה גבוהה."
+  },
+  {
+    title: "ליווי אונליין מרחוק",
+    text: "אימון והכוונה אישית אבל מרחוק (תכל'ס זה נהדר למי שלא יכול להגיע אליי פיזית). למי זה מתאים? מתאמנים עם וותק באימונים, רציניים שרוצים לשפר את התוצאות שלהם."
+  }
+];
