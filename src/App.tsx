@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div dir='rtl'
-      className="app bg-black text-teal-200"
+      className="app bg-gradient-to-r from-black to-[#3433cd] text-teal-200"
     >
       <Navbar isTopOfPage={isTopOfPage} selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
       <Home selectedPage={selectedPage} setSelectedPage={setSelectedPage} />

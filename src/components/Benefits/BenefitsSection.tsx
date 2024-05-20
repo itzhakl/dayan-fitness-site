@@ -23,7 +23,13 @@ const BenefitsSection = ({benefit, setSelectedPage}: Props) => {
         </div>
         <h4 className="font-bold">{benefit.title}</h4>
         <p className="my-3 text-wrap">{benefit.description}</p>
-        <LinkScroll smooth duration={1000} to={SelectedPage.ContactUs} className='text-sm font-bold text-primary-500 underline hover:text-secondary-500 cursor-pointer' onClick={() => setSelectedPage(SelectedPage.ContactUs)} ><p>צור קשר</p></LinkScroll>
+        <LinkScroll 
+            smooth duration={1000} to={SelectedPage.ContactUs} 
+            className='text-sm font-bold text-primary-500 underline hover:text-secondary-500 cursor-pointer' 
+            onClick={() => setSelectedPage(SelectedPage.ContactUs)}
+        >
+            <p>עוד פרטים</p>
+        </LinkScroll>
     </motion.div>
   );
 }
