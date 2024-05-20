@@ -8,9 +8,6 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-COPY nagishli-files /app/dist/nagishli-files
-COPY nagishli_beta.js /app/dist
-
 FROM nginx:alpine
 
 COPY --from=builder /app/dist /usr/share/nginx/html
