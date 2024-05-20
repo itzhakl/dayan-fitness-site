@@ -27,11 +27,8 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build the project
-        run: npm run build
+      - name: run Dockerfile
+        run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
