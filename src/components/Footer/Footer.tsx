@@ -1,4 +1,4 @@
-import Logo from '@/assets/Logo.png';
+import Logo from '@/assets/images/Logo.png';
 import { HebrewDisplayName, SelectedPage } from '@/shared/types';
 import { motion } from 'framer-motion';
 import {

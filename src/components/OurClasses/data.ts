@@ -1,8 +1,8 @@
-import image1 from '@/assets/image1.jpeg';
-import image2 from '@/assets/image2.jpeg';
-import image3 from '@/assets/image3.jpeg';
-import image4 from '@/assets/image4.jpeg';
-import video from '@/assets/video1.mp4';
+import image1 from '@/assets/images/image1.jpeg';
+import image2 from '@/assets/images/image2.jpeg';
+import image3 from '@/assets/images/image3.jpeg';
+import image4 from '@/assets/images/image4.jpeg';
+import video from '@/assets/images/video1.mp4';
 import { DatasType } from '@/shared/types';
 
 export const datas: Array<DatasType> = [

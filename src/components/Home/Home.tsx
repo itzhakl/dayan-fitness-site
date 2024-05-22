@@ -2,11 +2,7 @@ import { SelectedPage } from '@/shared/types';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import ActionButton from '@/shared/ActionButton';
 import { Link as LinkScroll } from 'react-scroll/modules';
-import HomePageText from '@/assets/HomePageText.png';
-import HomePageGraphic from '@/assets/HomePageGraphic.png';
-import SponsorRedBull from '@/assets/SponsorRedBull.png';
-import SponsorForbes from '@/assets/SponsorForbes.png';
-import SponsorFortune from '@/assets/SponsorFortune.png';
+import HomePageGraphic from '@/assets/images/HomePageGraphic.png';
 import { motion } from 'framer-motion';
 import { Element } from "react-scroll";
 import { HOME_TEXT, JOIN_NOW, LEARN_MORE } from '@/shared/pageTexts';
@@ -27,10 +23,7 @@ const Home = ({ selectedPage, setSelectedPage }: Props) => {
         onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
       >
         {/* Image */}
-        <div className='flex space-x-2 basis-3/5 justify-center md:z-[10] md:ml-40 md:mt-16 md:justify-items-end'>
-          <img className='w-1/2' src={HomePageGraphic} alt="home-page-graphic" />
-          <img className='w-1/2' src={HomePageGraphic} alt="home-page-graphic" />
-        </div>
+          <img className='basis-3/5 md:z-[10] md:ml-40 md:mt-16' src={HomePageGraphic} alt="home-page-graphic" />
         {/* Main Header */}
         <div className='z-10 md:mt-32 mt-16'>
           {/* Headings */}
@@ -38,7 +31,7 @@ const Home = ({ selectedPage, setSelectedPage }: Props) => {
             <div className=''>
               <div className="w-full mx-auto rounded-lg">
                 <h1 className="md:text-xl sm:text-base font-bold mb-4">אם הגעתם לפה, אתם מאלו שמשקיעים בגוף שלהם ורוצים לראות תוצאות.</h1>
-                <div className="md:text-base sm:text-sm leading-7 text-teal-50 space-y-4">
+                <div className="md:text-base sm:text-sm leading-7 text-gray-50 space-y-4">
                   <p>מי אנחנו? ישראל וטליה - בעלי סטודיו לאימוני כוח ושיפור הרכב גוף עם דגש על טאצ' אישי (כן, ממש 1 על 1)</p>
                   <p>אצלנו, כל מתאמן.ת עוברים אימון היכרות + אבחון מקצועי + שיחת תיאום ציפיות</p>
                   <p>כי בינינו, בשביל להשיג תוצאות ולהתמיד - צריך התאמה אישית של התוכנית אליכם ולא אתכם לתוכנית.</p>

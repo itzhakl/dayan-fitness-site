@@ -2,7 +2,7 @@ import { SelectedPage } from "@/shared/types";
 import { motion } from "framer-motion";
 import HText from "@/shared/HText";
 import { useForm } from "react-hook-form";
-import ContactUsPageGraphic from '@/assets/ContactUsPageGraphic.png';
+import ContactUsPageGraphic from '@/assets/images/ContactUsPageGraphic.png';
 import { Element } from "react-scroll";
 
 

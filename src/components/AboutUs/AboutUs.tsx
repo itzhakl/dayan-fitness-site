@@ -28,7 +28,7 @@ const AboutUs = ({ setSelectedPage }: Props) => {
               <h1 className="md:text-3xl font-bold md:mb-6 mb-3 text-2xl">מי אנחנו?</h1>
               <div className="md:flex mx-auto md:p-6">
                 <div className="md:m-8 mb-4">
-                  <h2 className="md:text-2xl font-semibold mb-2 text-teal-50">ישראל דיין</h2>
+                  <h2 className="md:text-2xl font-semibold mb-2 text-gray-50">ישראל דיין</h2>
                   <p className="md:text-base text-sm md:mb-4 mb-1">מאמן הכושר בסטודיו, מוסמך וינגייט + הכשרות בתחום הפציעות והתזונה.</p>
                   <p className="md:text-base text-sm md:mb-4 mb-1">
                     עד לפני עשור, הייתי בחור במשקל 110 קילו, חלש וכאוב. (כן, גם אני הייתי "בצד השני") לא ידעתי מה זה כושר, ירידה במשקל ואיך רואים תוצאות איכותיות.
@@ -42,7 +42,7 @@ const AboutUs = ({ setSelectedPage }: Props) => {
                 </div>
 
                 <div className='md:m-8'>
-                  <h2 className="md:text-2xl font-semibold mb-2 text-teal-50">טליה שבת</h2>
+                  <h2 className="md:text-2xl font-semibold mb-2 text-gray-50">טליה שבת</h2>
                   <p className="md:text-base text-sm md:mb-4 mb-1">מאמנת הכושר בסטודיו. מורה לחינוך גופני, מטפלת בספורט טיפולי ומוסמכת לאימון נשים בהריון ולאחר לידה.</p>
                   <p className="md:text-base text-sm md:mb-4 mb-1">
                     נתחיל בזה שגם את יכולה להראות, להרגיש ולחיות יותר טוב. איך? על ידי אימוני כוח ואירובי שיגרמו לך להיות חזקה, זקופה וחטובה יותר.

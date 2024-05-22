@@ -8,15 +8,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        "gray-20": "#F8F4EB",
-        "gray-50": "#EFE6E6",
-        "gray-100": "#DFCCCC",
-        "gray-500": "#5E0000",
-        "primary-100": "#FFE1E0",
-        "primary-300": "#FFA6A3",
-        "primary-500": "#FF6B66",
-        "secondary-400": "#FFCD5B",
-        "secondary-500": "#FFC132",
+        "gray-20": "#DAFDBA",
+        "gray-50": "#DAFDBA",
+        "gray-100": "#9AEBA3",
+        "gray-500": "#9AEBA3",
+        "primary-100": "#13678A",
+        "primary-300": "#13678A",
+        "primary-500": "#13678A",
+        "secondary-400": "#45C4B0",
+        "secondary-500": "#012030",
       },
       backgroundImage: (theme) => ({
         "gradient-yellowred":

@@ -4,7 +4,7 @@ import HText from '@/shared/HText';
 import { benefits } from './data';
 import BenefitsSection from './BenefitsSection';
 import ActionButton from '@/shared/ActionButton';
-import BenefitsPageGraphic from '@/assets/BenefitsPageGraphic.png'
+import BenefitsPageGraphic from '@/assets/images/BenefitsPageGraphic.png'
 import { Element } from "react-scroll";
 
 
