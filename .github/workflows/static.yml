@@ -27,8 +27,8 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: run Dockerfile
-        run: docker build . --file Dockerfile --tag dayan-studio:$(date +%s)
+      - name: Build Docker image
+        run: docker build . --file Dockerfile --tag dayan-studio:latest
 
       - name: Create output directory
         run: mkdir -p output
@@ -36,7 +36,7 @@ jobs:
       - name: Run Docker container and copy build artifacts
         run: |
           docker run --name my-container dayan-studio:latest
-          docker cp my-container:/path/to/build/output ./output
+          docker cp my-container:/usr/share/nginx/html ./output
           docker rm my-container
 
       - name: Upload artifact
