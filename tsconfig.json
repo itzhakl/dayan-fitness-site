@@ -19,6 +19,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src", "nagishli-files", "nagishli_beta.js"],
+  "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

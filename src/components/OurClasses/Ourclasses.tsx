@@ -13,7 +13,7 @@ type Props = {
 const Ourclasses = ({ setSelectedPage }: Props) => {
   return (
     <Element name="ourclasses">
-      <section id='' className="snap-start h-auto bg-teal-600 py-40">
+      <section id='' className="snap-start h-auto bg-primary-100 py-40">
         <motion.div
           onViewportEnter={() => setSelectedPage(SelectedPage.OurClasses)}
         >

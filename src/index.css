@@ -1,57 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Montserrat:wght@700&display=swap');
 
 @tailwind base;
-
-/* Firefox */
-* {
-  scrollbar-width: thin;
-  /* scrollbar-color: var(--secondary) var(--primary); */
-}
-
-/* Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-  width: 15px;
-}
-
-*::-webkit-scrollbar-track {
-  /* background: var(--primary); */
-  border-radius: 5px;
-}
-
-*::-webkit-scrollbar-thumb {
-  /* background-color: var(--secondary); */
-  border-radius: 14px;
-  border: 3px solid var(--primary);
-}
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --primary: rebeccapurple;
-  --secondary: cornflowerblue;
-}
-
-/* :root {
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-smoothing: grayscale;
-  background-color: black;
-} */
-
-span.nagishli-trigger-icon {
-  width: 40px;
-  height: 40px;
-}
-
-div#NagishLiWidget{
-  left:auto;
-  right:10px;
-  transform: translate(120%,0);
-}
-
-div#NagishLiWidget.nagishli-widget-show{
-  left:auto;
-  right:10px;
-  transform: translate(0,0);
-}

@@ -17,7 +17,7 @@ const Home = ({ selectedPage, setSelectedPage }: Props) => {
 
   return (
     <Element name='home'>
-    <section id='' className='gap-16 snap-start py-10 h-screen md:pb-0' >
+    <section id='' className='gap-16 bg-gray-20 snap-start py-10 h-screen md:pb-0' >
       {/* Images & Header */}
       <motion.div className='md:flex mx-auto w-5/6 items-center justify-center md:h-5/6'
         onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
@@ -52,7 +52,7 @@ const Home = ({ selectedPage, setSelectedPage }: Props) => {
 
       {/* Sponsors */}
       {isAboveMediumScreens && (
-        <div className='h-[150px] w-full bg-teal-600 py-10'>
+        <div className='h-[150px] w-full bg-primary-100 py-10'>
           <div className='mx-auto w-5/6'>
             <div className='flex w-3/5 items-center justify-between gap-8'>
               {/* <img src={SponsorRedBull} alt="sponsor-redbull" />

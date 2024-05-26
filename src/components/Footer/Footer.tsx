@@ -23,7 +23,7 @@ type Props = {
 const Footer = ({ setSelectedPage }: Props): JSX.Element => {
     return (
         <Element name='footer'>
-            <section id='footer' className='bg-teal-600 snap-start pt-16'>
+            <section id='footer' className='bg-primary-100 snap-start pt-16'>
                 <motion.div
                     onViewportEnter={() => setSelectedPage(SelectedPage.Footer)}
                     className='w-5/6 mx-auto gap-16 md:flex'>

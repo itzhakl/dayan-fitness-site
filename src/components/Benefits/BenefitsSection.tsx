@@ -17,7 +17,7 @@ const BenefitsSection = ({benefit, setSelectedPage}: Props) => {
     className="mt-5 mx-auto w-[250px] h-[400px] m-4 rounded-md border-2 border-gray-100 px-5 py-16 text-center"
         variants={childVariant} >
         <div className="mb-4 flex justify-center">
-            <div className="rounded-full border-2 border-gray-100 bg-teal-600 p-4">
+            <div className="rounded-full border-2 border-gray-100 bg-primary-100 p-4">
                 {benefit.icon}
             </div>
         </div>
