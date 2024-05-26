@@ -1,10 +1,12 @@
 import { SelectedPage } from "@/shared/types";
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import HText from "@/shared/HText";
 import { useForm } from "react-hook-form";
 import ContactUsPageGraphic from '@/assets/images/ContactUsPageGraphic.png';
 import { Element } from "react-scroll";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import { useRef } from "react";
+import { useParallax } from "@/hooks/hooks";
 
 
 type Props = {
@@ -12,6 +14,9 @@ type Props = {
 }
 
 const ContactUs = ({setSelectedPage}: Props) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const y = useParallax(scrollYProgress, 300);
   const inputStyle = `w-full snap-start mb-5 rounded-lg bg-primary-300 px-5 py-3 placeholder-white`;
   const { register, trigger, formState: { errors } } = useForm();
   const isAboveMediumScreens = useMediaQuery('(min-width:1060px)');
@@ -23,8 +28,8 @@ const ContactUs = ({setSelectedPage}: Props) => {
   }
 
   return (
-    <Element className="bg-secondary snap-start min-h-svh" name="contactus">
-    <section id='' className="w-5/6 mx-auto pt-24 pb-32">
+    <section id='contactus' className="bg-secondary snap-start min-h-svh w-5/6 mx-auto pt-24 pb-32">
+      <div ref={ref} className="div">
         <motion.div
           onViewportEnter={() => setSelectedPage(SelectedPage.ContactUs)}
           >
@@ -78,8 +83,8 @@ const ContactUs = ({setSelectedPage}: Props) => {
                 </motion.div>}
             </div>
         </motion.div>
+        </div>
     </section>
-    </Element>
   );
 }
 

@@ -7,9 +7,22 @@ import Ourclasses from '@/components/OurClasses/Ourclasses';
 import ContactUs from '@/components/ContactUs/ContactUs';
 import Footer from '@/components/Footer/Footer';
 import AboutUs from '@/components/AboutUs/AboutUs';
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  MotionValue
+} from "framer-motion";
 // import ScrollListener from './ScrollListener'
 
 function App() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
   const [selectedPage, setSelectedPage] = useState<string>(SelectedPage.Home);
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
   // const pageIds = Object.values(SelectedPage);
@@ -27,6 +40,8 @@ function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // const components = [Home, AboutUs, Ourclasses, Benefits, ContactUs, Footer];
+
   return (
     <div dir='rtl'
       className="app bg-secondary text-primary-text"
@@ -38,6 +53,10 @@ function App() {
       <Benefits setSelectedPage={setSelectedPage} />
       <ContactUs setSelectedPage={setSelectedPage} />
       <Footer setSelectedPage={setSelectedPage} />
+      {/* {components.map((Component) => (
+        <Component selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+      ))} */}
+      <motion.div className="fixed border-3 border-solid border-primary rounded-3xl bottom-2 bg-accent w-full h-2" style={{ scaleX }} />
     </div>
   );
 }

@@ -4,9 +4,11 @@ import ActionButton from '@/shared/ActionButton';
 import { Link as LinkScroll } from 'react-scroll/modules';
 import HomePageGraphic from '@/assets/images/HomePageGraphic.png';
 import homeBackground from "@/assets/images/homeBackground.jpeg";
-import { motion } from 'framer-motion';
+import { MotionValue, motion, useScroll } from 'framer-motion';
 import { Element } from "react-scroll";
 import { HOME_TEXT, JOIN_NOW, LEARN_MORE } from '@/shared/pageTexts';
+import { useRef } from 'react';
+import { useParallax } from '@/hooks/hooks';
 
 type Props = {
   selectedPage: string;
@@ -15,23 +17,26 @@ type Props = {
 
 const Home = ({ selectedPage, setSelectedPage }: Props) => {
   const isAboveMediumScreens = useMediaQuery('(min-width:1060px)');
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const y = useParallax(scrollYProgress, 300);
 
   return (
-    <Element className='flex flex-col justify-center min-h-svh snap-start' name='home'>
-      <img alt="Background" className="absolute w-full min-h-full inset-0 object-cover opacity-5" src={homeBackground}/>
-      <section className='flex flex-col h-full items-center md:pt-10' >
+    <section id='home' className='flex flex-col justify-center min-h-svh snap-start items-center' >
+      <div ref={ref} className="div">
+        <img alt="Background" className="absolute w-full min-h-full inset-0 object-cover opacity-5" src={homeBackground} />
         {/* Images & Header */}
         <motion.div className='flex lg:flex-row flex-col mx-auto w-5/6 lg:mt-32 gap-2 items-center'
           onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
         >
           {/* Image */}
-          <div className="w-full h-auto md:max-w-max max-w-60 ">
+          <div className="w-full h-auto xs:pt-14 md:max-w-max max-w-60 ">
             <img src={HomePageGraphic} alt="home-page-graphic" />
             {!isAboveMediumScreens &&
-              <div className='w-full bg-primary h-2 rounded-3xl'/>}
+              <div className='w-full bg-primary h-2 rounded-3xl' />}
           </div>
           {/* Main Header */}
-          <div className='z-10 py-4 mt-16'>
+          <div className='z-10 py-4'>
             {/* Headings */}
             <motion.div className='' initial='hidden' whileInView='visible' viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }} variants={{ hidden: { opacity: 0, x: -50 }, visible: { opacity: 1, x: 0 } }}>
               <div className="w-full text-secondary-text border-solid mx-auto rounded-lg">
@@ -64,8 +69,8 @@ const Home = ({ selectedPage, setSelectedPage }: Props) => {
             </div>
           </div>
         )}
-      </section>
-    </Element>
+      </div>
+    </section>
   );
 }
 

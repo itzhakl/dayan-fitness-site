@@ -1,11 +1,13 @@
 import { SelectedPage } from '@/shared/types';
 import useMediaQuery from '@/hooks/useMediaQuery';
-import { motion } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 import { Element } from "react-scroll";
 import israelAndTalya from "@/assets/images/israelAndTalya2.png";
 // import israelPhoto from "@/assets/images/israelPhoto.png";
 
 import { ABOUT_US } from '@/shared/pageTexts';
+import { useRef } from 'react';
+import { useParallax } from '@/hooks/hooks';
 
 type Props = {
   setSelectedPage: (value: string) => void;
@@ -13,10 +15,13 @@ type Props = {
 
 const AboutUs = ({ setSelectedPage }: Props) => {
   const isAboveMediumScreens = useMediaQuery('(min-width:1060px)');
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const y = useParallax(scrollYProgress, 300);
   return (
-    <Element className='relative snap-start min-h-svh' name='aboutus'>
+      <section id='aboutus' className='relative snap-start min-h-svh py-10 gap-16 md:pb-0' >
+        <div ref={ref} className="div">
       <img alt="Background" className="absolute w-full min-h-full inset-0 object-cover opacity-5" src={israelAndTalya}/>
-      <section id='' className='py-10 gap-16 md:pb-0' >
         {/* Images & Header */}
         <motion.div
           className='md:flex mx-auto w-5/6 items-center justify-center md:h-5/6'
@@ -65,8 +70,8 @@ const AboutUs = ({ setSelectedPage }: Props) => {
             </motion.div>
           </div>
         </motion.div>
+        </div>
       </section>
-    </Element>
   );
 }
 

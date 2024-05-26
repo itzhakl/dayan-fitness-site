@@ -1,6 +1,6 @@
 import Logo from '@/assets/images/Logo.png';
 import { HebrewDisplayName, SelectedPage } from '@/shared/types';
-import { motion } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 import {
   WhatsApp as WhatsAppIcon,
   Phone as PhoneIcon,
@@ -14,6 +14,8 @@ import WazeIcon from '../../assets/svg/waze.svg'
 import { Element } from "react-scroll";
 import Copyright from './Copyright';
 import TikTokIcon from '@/assets/svg/tiktok.svg';
+import { useRef } from 'react';
+import { useParallax } from '@/hooks/hooks';
 
 
 type Props = {
@@ -21,9 +23,12 @@ type Props = {
 }
 
 const Footer = ({ setSelectedPage }: Props): JSX.Element => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const y = useParallax(scrollYProgress, 300);
   return (
-    <Element className='relative bg-primary snap-start min-h-svh' name='footer'>
-      <section id='footer' className='pt-16'>
+    <section id='footer' className='relative bg-primary snap-start min-h-svh pt-16'>
+      <div ref={ref} className="div">
         <motion.div
           onViewportEnter={() => setSelectedPage(SelectedPage.Footer)}
           className='w-5/6 mx-auto gap-16 md:flex'>
@@ -57,9 +62,10 @@ const Footer = ({ setSelectedPage }: Props): JSX.Element => {
           </div>
           <img className='w-[50px] h-[50px]' height='50px' width='50px' src={Logo} alt="footer-logo" />
         </motion.div>
-      </section>
-      <Copyright />
-    </Element>
+        <Copyright />
+      </div>
+    </section>
+
   );
 }
 

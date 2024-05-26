@@ -1,10 +1,10 @@
 import { DatasType, SelectedPage } from "@/shared/types";
-import { motion } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 import HText from "@/shared/HText";
 import { datas, trainingPlans, trainingPlansTitle } from "./data";
 import Class from "./Class";
 import { Element } from "react-scroll";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link as LinkScroll } from 'react-scroll/modules';
 import useMediaQuery from "@/hooks/useMediaQuery";
 
@@ -68,16 +68,20 @@ type Props = {
 
 // export default Ourclasses;
 import React from 'react';
+import { useParallax } from "@/hooks/hooks";
 
 
 const TrainingPrograms: React.FC<Props> = ({ setSelectedPage }) => {
   const [expandedPlan, setExpandedPlan] = useState<number | null>(null);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const y = useParallax(scrollYProgress, 300);
 
   return (
-    <Element className="snap-start min-h-screen bg-primary" name="ourclasses">
-      <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.OurClasses)}>
-        <section id="training-programs" className="w-5/6 mx-auto pt-24 pb-32 text-primary-text">
+    <section id="ourclasses" className="flex justify-center mx-auto snap-start min-h-screen bg-primary">
+      <div ref={ref} className="w-5/6 py-24">
+        <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.OurClasses)}>
           <div className="text-center mb-10">
             <h1 className="text-4xl font-bold text-highlight">מסלולי אימונים מותאמים אישית</h1>
             <p className="mt-5 text-lg text-secondary-text">
@@ -89,14 +93,14 @@ const TrainingPrograms: React.FC<Props> = ({ setSelectedPage }) => {
             {trainingPlans.map((plan, index) => (
               <motion.div
                 key={index}
-                // className={`bg-secondary p-6 rounded-lg ${isAboveMediumScreens ? 'flex-shrink-0 w-1/4' : 'w-full'}`}
+                className={`bg-secondary p-6 rounded-lg ${isAboveMediumScreens ? 'flex-shrink-0 w-1/4' : 'w-full'}`}
                 initial={false}
                 animate={{ height: expandedPlan === index ? 'auto' : 'fit-content' }}
-                transition={{ 
-                  height: { 
-                    duration: 0.5, 
-                    ease: "easeInOut" 
-                  } 
+                transition={{
+                  height: {
+                    duration: 0.5,
+                    ease: "easeInOut"
+                  }
                 }}
                 exit={{ height: 0 }}
               >
@@ -144,9 +148,9 @@ const TrainingPrograms: React.FC<Props> = ({ setSelectedPage }) => {
               </p>
             </LinkScroll>
           </div>
-        </section>
-      </motion.div>
-    </Element>
+        </motion.div>
+      </div>
+    </section>
   );
 }
 
