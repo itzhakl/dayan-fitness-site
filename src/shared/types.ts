@@ -1,21 +1,21 @@
 export enum SelectedPage {
     Home = 'home',
     AboutUs = 'aboutus',
-    Benefits = 'benefits',
     OurClasses = 'ourclasses',
+    Benefits = 'benefits',
     ContactUs = 'contactus',
     Footer = 'footer'
 }
 
 export enum HebrewDisplayName {
-  home = 'בית',
-  aboutus = 'מי אנחנו',
+  home = 'עמוד ראשי',
+  aboutus = 'אודותינו',
   benefits = 'יתרונות',
   ourclasses = 'המסלולים שלנו',
   contactus = 'צור קשר',
-  footer = 'פרטים',
+  footer = 'בלוג',
   SignIn = 'הכנס',
-  BecomeAMember = 'הפוך לחבר',
+  BecomeAMember = 'הירשם',
 }
 
 export interface BenefitType {

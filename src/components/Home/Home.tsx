@@ -18,8 +18,8 @@ const Home = ({ selectedPage, setSelectedPage }: Props) => {
 
   return (
     <Element className='flex flex-col justify-center min-h-svh snap-start' name='home'>
-      {/* <img alt="Background" className="absolute w-full min-h-full inset-0 object-cover opacity-5" src={homeBackground}/> */}
-      <section id='' className='flex flex-col h-full items-center md:pt-10' >
+      <img alt="Background" className="absolute w-full min-h-full inset-0 object-cover opacity-5" src={homeBackground}/>
+      <section className='flex flex-col h-full items-center md:pt-10' >
         {/* Images & Header */}
         <motion.div className='flex lg:flex-row flex-col mx-auto w-5/6 lg:mt-32 gap-2 items-center'
           onViewportEnter={() => setSelectedPage(SelectedPage.Home)}

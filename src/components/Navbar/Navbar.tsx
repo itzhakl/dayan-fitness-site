@@ -39,17 +39,17 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                     />
                   ))}
                 </div>
+                {/*Left Side  */}
                 {/* Sign In + Button */}
                 <div className={`${flexBetween} gap-8`}>
                   {/* <p>{HebrewDisplayName['SignIn']}</p> */}
-                  <ActionButton className="cursor-pointer" selectedPage={SelectedPage.ContactUs}>{HebrewDisplayName['BecomeAMember']}</ActionButton>
+                  <ActionButton className="cursor-pointer text-accent" selectedPage={SelectedPage.ContactUs}>הירשם עכשיו</ActionButton>
                 </div>
               </div>) : (
               <button title="MenuToggle" className='rounded-full bg- p-2' onClick={() => setIsMenuToggled(!isMenuToggled)}>
                 <Bars3Icon className="h-6 w-6 text-secondary-text" />
               </button>
             )}
-            {/*Left Side  */}
             <ActionButton className="cursor-pointer" selectedPage={SelectedPage.Home}>
               <img height='50px' width='50px' src={Logo} alt="logo" />
             </ActionButton>
