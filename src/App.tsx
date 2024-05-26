@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div dir='rtl'
-      className="app bg-secondary-400 text-gray-50"
+      className="app bg-secondary text-primary-text"
     >
       <Navbar isTopOfPage={isTopOfPage} selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
       <Home selectedPage={selectedPage} setSelectedPage={setSelectedPage} />

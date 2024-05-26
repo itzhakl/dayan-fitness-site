@@ -8,22 +8,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        "primary": "#000000",       // Black
-        "secondary": "#007BFF",     // Vivid blue
-        "primary-text": "#FFFFFF",  // White for high contrast text
-        "secondary-text": "#B0B0B0",// Light gray for secondary text
-        "highlight": "#FF7F00",     // Orange for complementary accent
-        "background": "#121212",    // Very dark gray
-        "accent": "#00BFFF",        // Light blue
-        "gray-20": "#fefefe",
-        "gray-50": "#cfe2ee",
+        "primary": "#000F1F",
+        "secondary": "#001f3f",
+        "primary-text": "#40E0D0",
+        "secondary-text": "#FFFFFF",
+        "highlight": "#83c5be",     
+        "background": "#218389",
+        "dark-blue": "#000F1F",
+        "accent": "#f95d24",
         "gray-100": "#a0c5dc",
-        "gray-500": "#132b3a",
-        "primary-100": "#72a8cb",
+        "primary-100": "#005c64",
         "primary-300": "#448cba",
-        "primary-500": "#040a0e",
-        "secondary-400": "#2f6c92",
-        "secondary-500": "#224c67",
       },
       backgroundImage: (theme) => ({
         "gradient-yellowred":
