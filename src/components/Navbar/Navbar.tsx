@@ -46,7 +46,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                 </div>
               </div>) : (
               <button title="MenuToggle" className='rounded-full bg- p-2' onClick={() => setIsMenuToggled(!isMenuToggled)}>
-                <Bars3Icon className="h-6 w-6 text-gray-400" />
+                <Bars3Icon className="h-6 w-6 text-secondary-text" />
               </button>
             )}
             {/*Left Side  */}
@@ -64,7 +64,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
               {/* Close Button */}
               <div className="flex justify-start p-10">
                 <button title="close" onClick={() => setIsMenuToggled(!isMenuToggled)}>
-                  <XMarkIcon className="h-6 w-6 text-gray-400" />
+                  <XMarkIcon className="h-6 w-6 text-secondary-text" />
                 </button>
               </div>
 

@@ -11,7 +11,7 @@ export enum HebrewDisplayName {
   home = 'בית',
   aboutus = 'מי אנחנו',
   benefits = 'יתרונות',
-  ourclasses = 'השיעורים שלנו',
+  ourclasses = 'המסלולים שלנו',
   contactus = 'צור קשר',
   footer = 'פרטים',
   SignIn = 'הכנס',

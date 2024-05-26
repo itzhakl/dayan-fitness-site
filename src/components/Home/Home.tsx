@@ -17,19 +17,21 @@ const Home = ({ selectedPage, setSelectedPage }: Props) => {
   const isAboveMediumScreens = useMediaQuery('(min-width:1060px)');
 
   return (
-    <Element className='min-h-svh snap-start md:pt-10' name='home'>
-      <img alt="Background" className="absolute w-full min-h-full inset-0 object-cover opacity-5" src={homeBackground}/>
-      <section id='' className='' >
+    <Element className='flex flex-col justify-center min-h-svh snap-start' name='home'>
+      {/* <img alt="Background" className="absolute w-full min-h-full inset-0 object-cover opacity-5" src={homeBackground}/> */}
+      <section id='' className='flex flex-col h-full items-center md:pt-10' >
         {/* Images & Header */}
-        <motion.div className='flex md:flex-row flex-col mx-auto w-5/6 items-center justify-around'
+        <motion.div className='flex lg:flex-row flex-col mx-auto w-5/6 lg:mt-32 gap-2 items-center'
           onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
         >
           {/* Image */}
           <div className="w-full h-auto md:max-w-max max-w-60 ">
             <img src={HomePageGraphic} alt="home-page-graphic" />
+            {!isAboveMediumScreens &&
+              <div className='w-full bg-primary h-2 rounded-3xl'/>}
           </div>
           {/* Main Header */}
-          <div className='z-10 py-4 md:mt-32 mt-16'>
+          <div className='z-10 py-4 mt-16'>
             {/* Headings */}
             <motion.div className='' initial='hidden' whileInView='visible' viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }} variants={{ hidden: { opacity: 0, x: -50 }, visible: { opacity: 1, x: 0 } }}>
               <div className="w-full text-secondary-text border-solid mx-auto rounded-lg">

@@ -15,7 +15,7 @@ const Link = ({ page, selectedPage, setSelectedPage, setIsMenuToggled }: Props) 
     <LinkScroll smooth
       duration={1000}
       to={lowerCasePage}
-      className={`${selectedPage === lowerCasePage ? "text-secondary-text" : ""} transition cursor-pointer duration-500 hover:text-accent`}
+      className={`${selectedPage === lowerCasePage ? "text-accent" : "text-secondary-text"} transition cursor-pointer duration-500 hover:text-primary-text`}
       onClick={() => { 
         setSelectedPage(lowerCasePage); 
         setIsMenuToggled && setIsMenuToggled(false);
