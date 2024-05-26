@@ -30,10 +30,10 @@ export default {
         montserrat: ["Montserrat", "sans-serif"],
       },
       content: {
-        evolvetext: "url('./assets/EvolveText.png')",
-        abstractwaves: "url('./assets/AbstractWaves.png')",
-        sparkles: "url('./assets/Sparkles.png')",
-        circles: "url('./assets/Circles.png')",
+        evolvetext: "url('./assets/images/EvolveText.png')",
+        abstractwaves: "url('./assets/images/AbstractWaves.png')",
+        sparkles: "url('./assets/images/Sparkles.png')",
+        circles: "url('./assets/images/Circles.png')",
       },
     },
     screens: {

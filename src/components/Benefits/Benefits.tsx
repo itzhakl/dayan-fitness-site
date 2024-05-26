@@ -21,8 +21,8 @@ const container = {
 
 const Benefits = ({ setSelectedPage }: Props) => {
   return (
-    <Element name='benefits'>
-    <section id='' className='mx-auto snap-start py-20 w-5/6'>
+    <Element className='min-h-svh snap-start' name='benefits'>
+    <section id='' className='mx-auto py-20 w-5/6'>
       <motion.div
         onViewportEnter={() => setSelectedPage(SelectedPage.Benefits)}
       >
