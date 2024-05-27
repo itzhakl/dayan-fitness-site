@@ -27,12 +27,12 @@ const Footer = ({ setSelectedPage }: Props): JSX.Element => {
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useParallax(scrollYProgress, 300);
   return (
-    <section id='footer' className='relative bg-primary snap-start min-h-svh pt-16'>
-      <div ref={ref} className="div">
-        {/* <motion.h2 style={{ y }}>{`#${HebrewDisplayName.footer}`}</motion.h2> */}
+    <section id='footer' className='h-screen flex justify-center items-center relative snap-center'>
+      <div ref={ref} className="bg-primary pt-16">
         <motion.div
           onViewportEnter={() => setSelectedPage(SelectedPage.Footer)}
           className='w-5/6 mx-auto gap-16 md:flex'>
+          <motion.h2 style={{ y }}>{`#${HebrewDisplayName.footer}`}</motion.h2>
           <div className="mt-16 basis-1/4 md:mt-0">
             <h4 className="font-bold">{'פרטים'}</h4>
             <div>
@@ -45,7 +45,7 @@ const Footer = ({ setSelectedPage }: Props): JSX.Element => {
               <a title='google-maps' target='blank' href='https://maps.app.goo.gl/mXrVZZww2EHSCzmJ8'><RoomOutlinedIcon /></a>
               <a title='waze' target='blank' href='https://ul.waze.com/ul?place=ChIJeSGzyhxLHRURTWWC5iP_iZM&ll=32.09687890%2C34.83111380&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location'>
                 <img className='w-[1.25rem] h-[1.25rem] inline-block' src={WazeIcon} />
-                </a>
+              </a>
             </div>
             <div className="div">
               <p className='my-5'><a title='mail' target='blank' href='mailto:hid0504154438@gmail.com'>{'hid0504154438@gmail.com'}</a><MailIcon /></p>

@@ -27,12 +27,12 @@ const Benefits = ({ setSelectedPage }: Props) => {
   const y = useParallax(scrollYProgress, 300);
 
   return (
-    <section id='benefits' className='min-h-svh snap-start mx-auto py-20 w-5/6'>
-      <div ref={ref} className="div">
-        {/* <motion.h2 style={{ y }}>{`#${HebrewDisplayName.benefits}`}</motion.h2> */}
+    <section id='benefits' className='h-screen flex justify-center items-center relative snap-center'>
+      <div ref={ref} className="mx-auto py-20 w-5/6">
         <motion.div
           onViewportEnter={() => setSelectedPage(SelectedPage.Benefits)}
         >
+          <motion.h2 style={{ y }}>{`#${HebrewDisplayName.benefits}`}</motion.h2>
 
           {/* כותרת */}
           <motion.div className='md:my-5 my-10 md:w-3/5'

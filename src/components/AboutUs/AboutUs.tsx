@@ -17,17 +17,17 @@ const AboutUs = ({ setSelectedPage }: Props) => {
   const isAboveMediumScreens = useMediaQuery('(min-width:1060px)');
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
-  const y = useParallax(scrollYProgress, 300);
+  const y = useParallax(scrollYProgress, 400);
   return (
-      <section id='aboutus' className='relative snap-start min-h-svh py-10 gap-16 md:pb-0' >
-        <div ref={ref} className="div">
-          {/* <motion.h2 style={{ y }}>{`#${HebrewDisplayName.aboutus}`}</motion.h2> */}
-      <img alt="Background" className="absolute w-full min-h-full inset-0 object-cover opacity-5" src={israelAndTalya}/>
+    <section id='aboutus' className='h-screen flex justify-center items-center relative snap-center' >
+      <div ref={ref} className=" py-10 gap-16 md:pb-0">
+        <img alt="Background" className="absolute w-full min-h-full inset-0 object-cover opacity-5" src={israelAndTalya} />
         {/* Images & Header */}
         <motion.div
           className='md:flex mx-auto w-5/6 items-center justify-center md:h-5/6'
           onViewportEnter={() => setSelectedPage(SelectedPage.AboutUs)}
         >
+          <motion.h2 style={{ y }}>{`#${HebrewDisplayName.aboutus}`}</motion.h2>
           {/* Main Header */}
           <div className='z-10 md:mt-32 mt-20'>
             {/* Headings */}
@@ -68,8 +68,8 @@ const AboutUs = ({ setSelectedPage }: Props) => {
             </motion.div>
           </div>
         </motion.div>
-        </div>
-      </section>
+      </div>
+    </section>
   );
 }
 

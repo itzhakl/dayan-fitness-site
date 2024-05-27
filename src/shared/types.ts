@@ -8,7 +8,7 @@ export enum SelectedPage {
 }
 
 export enum HebrewDisplayName {
-  home = 'עמוד ראשי',
+  home = 'ראשי',
   aboutus = 'אודותינו',
   benefits = 'יתרונות',
   ourclasses = 'המסלולים שלנו',

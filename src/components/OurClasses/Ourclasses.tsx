@@ -79,10 +79,10 @@ const TrainingPrograms: React.FC<Props> = ({ setSelectedPage }) => {
   const y = useParallax(scrollYProgress, 300);
 
   return (
-    <section id="ourclasses" className="flex justify-center mx-auto snap-start min-h-screen bg-primary">
-      <div ref={ref} className="w-5/6 py-24">
-        {/* <motion.h2 style={{ y }}>{`#${HebrewDisplayName.ourclasses}`}</motion.h2> */}
+    <section id="ourclasses" className="h-screen flex justify-center items-center relative snap-center">
+      <div ref={ref} className="bg-primary mx-auto w-5/6 py-24">
         <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.OurClasses)}>
+          <motion.h2 style={{ y }}>{`#${HebrewDisplayName.ourclasses}`}</motion.h2>
           <div className="text-center mb-10">
             <h1 className="text-4xl font-bold text-highlight">מסלולי אימונים מותאמים אישית</h1>
             <p className="mt-5 text-lg text-secondary-text">
