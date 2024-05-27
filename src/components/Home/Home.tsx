@@ -22,14 +22,14 @@ const Home = ({ selectedPage, setSelectedPage }: Props) => {
   const y = useParallax(scrollYProgress, 300);
 
   return (
-    <section id='home' className='h-screen flex justify-center items-center relative snap-center' >
+    <section id='home' className='h-svh flex justify-center items-center relative snap-center' >
       <div ref={ref} className="div">
+        {/* <motion.h2 className='absolute' style={{ y }}>{`#${HebrewDisplayName.home}`}</motion.h2> */}
         <img alt="Background" className="absolute w-full min-h-full inset-0 object-cover opacity-5" src={homeBackground} />
         {/* Images & Header */}
         <motion.div className='flex lg:flex-row flex-col mx-auto w-5/6 lg:mt-32 gap-2 items-center'
           onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
         >
-          <motion.h2 className='' style={{ y }}>{`#${HebrewDisplayName.home}`}</motion.h2>
           {/* Image */}
           <div className="w-full h-auto xs:pt-14 md:max-w-max max-w-60 ">
             <img src={HomePageGraphic} alt="home-page-graphic" />

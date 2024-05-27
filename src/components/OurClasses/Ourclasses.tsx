@@ -79,22 +79,22 @@ const TrainingPrograms: React.FC<Props> = ({ setSelectedPage }) => {
   const y = useParallax(scrollYProgress, 300);
 
   return (
-    <section id="ourclasses" className="h-screen flex justify-center items-center relative snap-center">
-      <div ref={ref} className="bg-primary mx-auto w-5/6 py-24">
+    <section id="ourclasses" className="bg-primary h-svh flex justify-center items-center relative snap-center">
+      <div ref={ref} className=" mx-auto w-5/6 py-24">
+        {/* <motion.h2 className='absolute' style={{ y }}>{`#${HebrewDisplayName.ourclasses}`}</motion.h2> */}
         <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.OurClasses)}>
-          <motion.h2 style={{ y }}>{`#${HebrewDisplayName.ourclasses}`}</motion.h2>
           <div className="text-center mb-10">
-            <h1 className="text-4xl font-bold text-highlight">מסלולי אימונים מותאמים אישית</h1>
-            <p className="mt-5 text-lg text-secondary-text">
+            <h1 className="text-[1.5rem] font-bold text-highlight">מסלולי אימונים מותאמים אישית</h1>
+            <p className="mt-5 text-[1rem] text-secondary-text">
               מצאו את מסלול האימון המתאים ביותר למטרות שלכם ולוח הזמנים שלכם.
             </p>
           </div>
 
-          <div className={` ${isAboveMediumScreens ? 'flex flex-row justify-center' : 'grid grid-cols-1'} max-w-full gap-10`}>
+          <div className={` ${isAboveMediumScreens ? 'flex flex-row justify-center' : 'grid grid-cols-1'} max-w-full gap-4`}>
             {trainingPlans.map((plan, index) => (
               <motion.div
                 key={index}
-                className={`bg-secondary p-6 rounded-lg ${isAboveMediumScreens ? 'flex-shrink-0 w-1/4' : 'w-full'}`}
+                className={`bg-secondary p-3 rounded-lg ${isAboveMediumScreens ? 'flex-shrink-0 w-1/4' : 'w-full'}`}
                 initial={false}
                 animate={{ height: expandedPlan === index ? 'auto' : 'fit-content' }}
                 transition={{

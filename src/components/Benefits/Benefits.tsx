@@ -27,18 +27,19 @@ const Benefits = ({ setSelectedPage }: Props) => {
   const y = useParallax(scrollYProgress, 300);
 
   return (
-    <section id='benefits' className='h-screen flex justify-center items-center relative snap-center'>
-      <div ref={ref} className="mx-auto py-20 w-5/6">
+    <section id='benefits' className='h-svh flex justify-center items-center relative snap-center'>
+      <div ref={ref} className="">
+        {/* <motion.h2 className='absolute' style={{ y }}>{`#${HebrewDisplayName.benefits}`}</motion.h2> */}
         <motion.div
+          className='flex flex-col justify-center items-center '
           onViewportEnter={() => setSelectedPage(SelectedPage.Benefits)}
         >
-          <motion.h2 style={{ y }}>{`#${HebrewDisplayName.benefits}`}</motion.h2>
 
           {/* כותרת */}
-          <motion.div className='md:my-5 my-10 md:w-3/5'
+          <motion.div className='w-5/6 md:my-5 my-10 md:w-3/5'
             initial='hidden' whileInView='visible' viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }} variants={{ hidden: { opacity: 0, x: -50 }, visible: { opacity: 1, x: 0 } }} >
             <HText>יותר מסתם סטודיו</HText>
-            <p className='my-5 text-sm'>
+            <p className='my-5 text-secondary-text text-sm'>
               אנחנו מספקים מתקני כושר מעולים מסדר עולמי, מאמנים ושיעורים שיעזרו
               לך להגיע למטרות הכושר האולטימטיביות שלך בקלות. אנחנו מעניקים תשומת
               לב אמיתית לכל חבר וחברה.
@@ -47,8 +48,9 @@ const Benefits = ({ setSelectedPage }: Props) => {
 
           {/* יתרונות */}
           <motion.div
-            className='flex whitespace-nowrap overflow-x-auto overflow-y-hidden items-center justify-between gap-8 mt-5'
-            initial='hidden' whileInView='visible' viewport={{ once: true, amount: 0.5 }} variants={container} >
+            className='w-[98svw] flex overflow-x-auto overflow-y-hidden items-center justify-between'
+            initial='hidden' whileInView='visible' viewport={{ once: true, amount: 0.5 }} variants={container} 
+            >
             {
               benefits.map((benefit) => (
                 <BenefitsSection benefit={benefit} setSelectedPage={setSelectedPage} key={benefit.title} />
@@ -56,7 +58,9 @@ const Benefits = ({ setSelectedPage }: Props) => {
             }
           </motion.div>
           {/* תמונה ותיאור */}
-          <div className='mt-16 items-center justify-between gap-20 md:mt-28 md:flex'>
+          <div 
+          // className='mt-16 items-center justify-between gap-20 md:mt-28 md:flex'
+          >
 
             {/* תיאור */}
             <div>

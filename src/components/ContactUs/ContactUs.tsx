@@ -28,22 +28,25 @@ const ContactUs = ({ setSelectedPage }: Props) => {
   }
 
   return (
-    <section id='contactus' className="h-screen flex justify-center items-center relative snap-center">
+    <section id='contactus' className="h-svh flex justify-center items-center relative snap-center">
       <div ref={ref} className="w-5/6 mx-auto pt-24 pb-32 bg-secondary">
+        {/* <motion.h2 className='absolute' style={{ y }}>{`#${HebrewDisplayName.contactus}`}</motion.h2> */}
         <motion.div
           onViewportEnter={() => setSelectedPage(SelectedPage.ContactUs)}
         >
-          <motion.h2 style={{ y }}>{`#${HebrewDisplayName.contactus}`}</motion.h2>
           {/* Header */}
-          <motion.div className="md:w-3/5" initial='hidden' whileInView='visible' viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }} variants={{ hidden: { opacity: 0, x: -50 }, visible: { opacity: 1, x: 0 } }}>
+          <motion.div className="pt-10 md:w-3/5" initial='hidden' whileInView='visible' viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }} variants={{ hidden: { opacity: 0, x: -50 }, visible: { opacity: 1, x: 0 } }}>
             <HText><span className="text-secondary-text">הצטרף עכשיו</span>{" "}כדי להיכנס לכושר</HText>
-            <p className="my-5 text-secondary-text">אתה בטוח רוצה להתחיל את המסע לכושר הטוב ביותר! כדי להתחיל, פשוט השאר את הפרטים שלך כאן. אנו ניצור איתך קשר בהקדם על מנת לספק לך את המידע והתמיכה שאתה צריך כדי להתחיל להרגיש טוב ולהתקדם בדרך שלך לכושר מיטבי. נשמח לסייע לך להגשים את היעדים שלך!</p>
+            {
+              isAboveMediumScreens && <p className="my-5 text-secondary-text">אתה בטוח רוצה להתחיל את המסע לכושר הטוב ביותר! כדי להתחיל, פשוט השאר את הפרטים שלך כאן. אנו ניצור איתך קשר בהקדם על מנת לספק לך את המידע והתמיכה שאתה צריך כדי להתחיל להרגיש טוב ולהתקדם בדרך שלך לכושר מיטבי. נשמח לסייע לך להגשים את היעדים שלך!</p>
+            }
           </motion.div>
 
           {/* Form and Image */}
           <div className="mt-10 pb-4 rounded-3xl justify-between md:flex gap-16">
             <motion.div className="mt-10 rounded-3xl drop-shadow-2xl bg-dark-blue p-4 basis-3/5 md:mt-0" initial='hidden' whileInView='visible' viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }} variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0 } }}>
               <form
+                className="flex flex-col gap-2"
                 // target="_blank"
                 onSubmit={handleOnSubmit} method='POST' action="https://formsubmit.co/ae263998254e908b749115bf2f84b5aa">
                 <input type="text" className={inputStyle} placeholder="שם" {...register('name', { required: true, maxLength: 100, })} /> {errors.name && (
@@ -73,7 +76,7 @@ const ContactUs = ({ setSelectedPage }: Props) => {
                     {errors.message.type === "maxLength" && "Character limit is 1000"}
                   </p>
                 )}
-                <button type='submit' className="mt-5 rounded-lg bg-secondary px-20 py-3 transi hover:text-white">שלח</button>
+                <button type='submit' className="mt-5 rounded-lg bg-accent px-20 text-secondary-text py-3 transi hover:text-white">שלח</button>
               </form>
             </motion.div>
             {isAboveMediumScreens &&

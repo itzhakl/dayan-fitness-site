@@ -14,7 +14,7 @@ const childVariant = {
 const BenefitsSection = ({benefit, setSelectedPage}: Props) => {
   return (
     <motion.div 
-    className="mt-5 mx-auto w-[15.625rem] h-[25rem] m-4 rounded-md border-2 bg-primary border-gray-100 px-5 py-16 text-center"
+    className="w-[15rem] h-[18rem] m-3 rounded-lg border-2 bg-primary border-gray-100 px-5 py-5 text-center flex-shrink-0 flex-grow-0"
         variants={childVariant} >
         <div className="mb-4 flex justify-center">
             <div className="rounded-full border-2 border-gray-100 bg-secondary p-4">
