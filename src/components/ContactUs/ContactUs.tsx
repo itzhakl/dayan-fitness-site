@@ -1,4 +1,4 @@
-import { SelectedPage } from "@/shared/types";
+import { HebrewDisplayName, SelectedPage } from "@/shared/types";
 import { motion, useScroll } from "framer-motion";
 import HText from "@/shared/HText";
 import { useForm } from "react-hook-form";
@@ -30,6 +30,7 @@ const ContactUs = ({setSelectedPage}: Props) => {
   return (
     <section id='contactus' className="bg-secondary snap-start min-h-svh w-5/6 mx-auto pt-24 pb-32">
       <div ref={ref} className="div">
+        {/* <motion.h2 style={{ y }}>{`#${HebrewDisplayName.contactus}`}</motion.h2> */}
         <motion.div
           onViewportEnter={() => setSelectedPage(SelectedPage.ContactUs)}
           >

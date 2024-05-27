@@ -1,4 +1,4 @@
-import { SelectedPage } from '@/shared/types';
+import { HebrewDisplayName, SelectedPage } from '@/shared/types';
 import { motion, useScroll } from 'framer-motion';
 import HText from '@/shared/HText';
 import { benefits } from './data';
@@ -29,6 +29,7 @@ const Benefits = ({ setSelectedPage }: Props) => {
   return (
     <section id='benefits' className='min-h-svh snap-start mx-auto py-20 w-5/6'>
       <div ref={ref} className="div">
+        {/* <motion.h2 style={{ y }}>{`#${HebrewDisplayName.benefits}`}</motion.h2> */}
         <motion.div
           onViewportEnter={() => setSelectedPage(SelectedPage.Benefits)}
         >

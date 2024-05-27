@@ -29,6 +29,7 @@ const Footer = ({ setSelectedPage }: Props): JSX.Element => {
   return (
     <section id='footer' className='relative bg-primary snap-start min-h-svh pt-16'>
       <div ref={ref} className="div">
+        {/* <motion.h2 style={{ y }}>{`#${HebrewDisplayName.footer}`}</motion.h2> */}
         <motion.div
           onViewportEnter={() => setSelectedPage(SelectedPage.Footer)}
           className='w-5/6 mx-auto gap-16 md:flex'>
@@ -42,7 +43,9 @@ const Footer = ({ setSelectedPage }: Props): JSX.Element => {
             <div className="div">
               <span className='my-5'>{'הרב דנגור 22, בני ברק'}</span>
               <a title='google-maps' target='blank' href='https://maps.app.goo.gl/mXrVZZww2EHSCzmJ8'><RoomOutlinedIcon /></a>
-              <a title='waze' target='blank' href='https://ul.waze.com/ul?place=ChIJeSGzyhxLHRURTWWC5iP_iZM&ll=32.09687890%2C34.83111380&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location'><img className='w-[20px] h-[20px] inline-block' src={WazeIcon} /></a>
+              <a title='waze' target='blank' href='https://ul.waze.com/ul?place=ChIJeSGzyhxLHRURTWWC5iP_iZM&ll=32.09687890%2C34.83111380&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location'>
+                <img className='w-[1.25rem] h-[1.25rem] inline-block' src={WazeIcon} />
+                </a>
             </div>
             <div className="div">
               <p className='my-5'><a title='mail' target='blank' href='mailto:hid0504154438@gmail.com'>{'hid0504154438@gmail.com'}</a><MailIcon /></p>
@@ -54,13 +57,13 @@ const Footer = ({ setSelectedPage }: Props): JSX.Element => {
           <div className='mt-16 basis-1/4 md:mt-0'>
             <h4 className="font-bold">Links</h4>
             <p className="my-5"><InstagramIcon /><a target='blank' href='https://www.instagram.com/dayn_israel?r=nametag'>{'@dayn_israel'}</a></p>
-            <p className="my-5"><img className='w-[30px] inline-block' src={TikTokIcon} /><a target='blank' href='https://www.youtube.com/channel/UCnQ-OQZNPQ6SE47c-76v-pg'>{'@daynisraelcoach'}</a></p>
+            <p className="my-5"><img className='w-[1.875rem] inline-block' src={TikTokIcon} /><a target='blank' href='https://www.youtube.com/channel/UCnQ-OQZNPQ6SE47c-76v-pg'>{'@daynisraelcoach'}</a></p>
             <p className="my-5"><FacebookIcon /><a target='blank' href='https://www.facebook.com/profile.php?id=100006389503448'>{'@facebook'}</a></p>
             <p className="my-5"><YouTubeIcon /><a target='blank' href='https://www.youtube.com/channel/UCnQ-OQZNPQ6SE47c-76v-pg'>{'@youtube'}</a></p>
             {/* <p className="my-5"><a target='blank' href='https://open.spotify.com/show/0tSAFGmKETKRQ4Cwhm9mmU?si=M5hc5lqUQZabtGZ-JuuVyg&dl_branch=1'>{'@spotify podcast'}</a></p>
                         <p className="my-5"><a target='blank' href='https://podcasts.apple.com/podcast/id1623819552?app=podcast&at=1000lHKX&ct=linktree_http&itscg=30200&itsct=lt_p&ls=1&mt=2'>{'@apple podcast'}</a></p> */}
           </div>
-          <img className='w-[50px] h-[50px]' height='50px' width='50px' src={Logo} alt="footer-logo" />
+          <img className='w-[3.125rem] h-[3.125rem]' src={Logo} alt="footer-logo" />
         </motion.div>
         <Copyright />
       </div>

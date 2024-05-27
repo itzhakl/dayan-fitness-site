@@ -1,4 +1,4 @@
-import { SelectedPage } from '@/shared/types';
+import { HebrewDisplayName, SelectedPage } from '@/shared/types';
 import useMediaQuery from '@/hooks/useMediaQuery';
 import ActionButton from '@/shared/ActionButton';
 import { Link as LinkScroll } from 'react-scroll/modules';
@@ -24,6 +24,7 @@ const Home = ({ selectedPage, setSelectedPage }: Props) => {
   return (
     <section id='home' className='flex flex-col justify-center min-h-svh snap-start items-center' >
       <div ref={ref} className="div">
+        {/* <motion.h2 className='absolute ' style={{ y }}>{`#${HebrewDisplayName.home}`}</motion.h2> */}
         <img alt="Background" className="absolute w-full min-h-full inset-0 object-cover opacity-5" src={homeBackground} />
         {/* Images & Header */}
         <motion.div className='flex lg:flex-row flex-col mx-auto w-5/6 lg:mt-32 gap-2 items-center'
@@ -40,8 +41,8 @@ const Home = ({ selectedPage, setSelectedPage }: Props) => {
             {/* Headings */}
             <motion.div className='' initial='hidden' whileInView='visible' viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }} variants={{ hidden: { opacity: 0, x: -50 }, visible: { opacity: 1, x: 0 } }}>
               <div className="w-full text-secondary-text border-solid mx-auto rounded-lg">
-                <h1 className="md:text-xl text-base font-bold mb-4">אם הגעתם לפה, אתם מאלו שמשקיעים בגוף שלהם ורוצים לראות תוצאות.</h1>
-                <div className="md:text-base text-sm leading-7 space-y-4">
+                <h1 className="md:text-xl xs:text-base text-base font-bold mb-4">אם הגעתם לפה, אתם מאלו שמשקיעים בגוף שלהם ורוצים לראות תוצאות.</h1>
+                <div className="md:text-base xs:text-xs text-sm leading-7 space-y-4">
                   <p>מי אנחנו? ישראל וטליה - בעלי סטודיו לאימוני כוח ושיפור הרכב גוף עם דגש על טאצ' אישי (כן, ממש 1 על 1)</p>
                   <p>אצלנו, כל מתאמן.ת עוברים אימון היכרות + אבחון מקצועי + שיחת תיאום ציפיות</p>
                   <p>כי בינינו, בשביל להשיג תוצאות ולהתמיד - צריך התאמה אישית של התוכנית אליכם ולא אתכם לתוכנית.</p>
@@ -50,16 +51,16 @@ const Home = ({ selectedPage, setSelectedPage }: Props) => {
               </div>
             </motion.div>
             {/* Actions */}
-            <motion.div className='mt-8 flex items-center gap-8' initial='hidden' whileInView='visible' viewport={{ once: true, amount: 0.5 }} transition={{ delay: 0.2, duration: 0.5 }} variants={{ hidden: { opacity: 0, x: -50 }, visible: { opacity: 1, x: 0 } }}>
+            <motion.div className='mt-8 flex items-center gap-4' initial='hidden' whileInView='visible' viewport={{ once: true, amount: 0.5 }} transition={{ delay: 0.2, duration: 0.5 }} variants={{ hidden: { opacity: 0, x: -50 }, visible: { opacity: 1, x: 0 } }}>
               <ActionButton selectedPage={SelectedPage.ContactUs} className='rounded-md bg-accent px-10 py-2 hover:bg-secondary text-secondary-text hover:text-primary-text transition duration-500 cursor-pointer'>{JOIN_NOW}</ActionButton>
-              <LinkScroll smooth duration={1000} to={`${SelectedPage.AboutUs}`} className='text-sm font-bold text-secondary-text underline hover:text-primary-text cursor-pointer' onClick={() => setSelectedPage(SelectedPage.AboutUs)} ><p>{LEARN_MORE}</p></LinkScroll>
+              <LinkScroll smooth duration={1000} to={`${SelectedPage.AboutUs}`} className='text-sm xs:text-xs font-bold text-secondary-text underline hover:text-primary-text cursor-pointer' onClick={() => setSelectedPage(SelectedPage.AboutUs)} ><p>{LEARN_MORE}</p></LinkScroll>
             </motion.div>
           </div>
         </motion.div>
 
         {/* Sponsors */}
         {isAboveMediumScreens && (
-          <div className='h-[150px] w-full bg-primary py-10'>
+          <div className='h-[9.375rem] w-full bg-primary py-10'>
             <div className='mx-auto w-5/6'>
               <div className='flex w-3/5 items-center justify-between gap-8'>
                 {/* <img src={SponsorRedBull} alt="sponsor-redbull" />

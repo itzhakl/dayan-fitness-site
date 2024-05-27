@@ -51,7 +51,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
               </button>
             )}
             <ActionButton className="cursor-pointer" selectedPage={SelectedPage.Home}>
-              <img height='50px' width='50px' src={Logo} alt="logo" />
+              <img className="h-[3.125rem] w-[3.125rem]" src={Logo} alt="logo" />
             </ActionButton>
           </div>
         </div>

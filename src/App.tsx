@@ -56,7 +56,7 @@ function App() {
       {/* {components.map((Component) => (
         <Component selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
       ))} */}
-      <motion.div className="fixed border-3 border-solid border-primary rounded-3xl bottom-2 bg-accent w-full h-2" style={{ scaleX }} />
+      <motion.div className="fixed border-3 border-solid border-primary rounded-3xl bottom-2 bg-background w-full h-1" style={{ scaleX }} />
     </div>
   );
 }

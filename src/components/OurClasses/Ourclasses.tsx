@@ -1,4 +1,4 @@
-import { DatasType, SelectedPage } from "@/shared/types";
+import { DatasType, HebrewDisplayName, SelectedPage } from "@/shared/types";
 import { motion, useScroll } from 'framer-motion';
 import HText from "@/shared/HText";
 import { datas, trainingPlans, trainingPlansTitle } from "./data";
@@ -81,6 +81,7 @@ const TrainingPrograms: React.FC<Props> = ({ setSelectedPage }) => {
   return (
     <section id="ourclasses" className="flex justify-center mx-auto snap-start min-h-screen bg-primary">
       <div ref={ref} className="w-5/6 py-24">
+        {/* <motion.h2 style={{ y }}>{`#${HebrewDisplayName.ourclasses}`}</motion.h2> */}
         <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.OurClasses)}>
           <div className="text-center mb-10">
             <h1 className="text-4xl font-bold text-highlight">מסלולי אימונים מותאמים אישית</h1>
