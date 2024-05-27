@@ -43,9 +43,7 @@ function App() {
   // const components = [Home, AboutUs, Ourclasses, Benefits, ContactUs, Footer];
 
   return (
-    <div dir='rtl'
-      className="app bg-secondary text-primary-text"
-    >
+    <div dir='rtl' className="app bg-secondary text-primary-text">
       <Navbar isTopOfPage={isTopOfPage} selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
       <Home selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
       <AboutUs setSelectedPage={setSelectedPage} />
@@ -56,7 +54,7 @@ function App() {
       {/* {components.map((Component) => (
         <Component selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
       ))} */}
-      <motion.div className="fixed border-3 border-solid border-primary rounded-3xl bottom-2 bg-background w-full h-1" style={{ scaleX }} />
+      <motion.div className="fixed left-0 right-0 border-3 border-solid border-[0.1rem] border-primary rounded-[1.5rem] bottom-2 bg-accent w-full h-[0.3125rem]" style={{ scaleX }} />
     </div>
   );
 }
