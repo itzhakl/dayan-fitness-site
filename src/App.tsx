@@ -12,8 +12,8 @@ import {
   useScroll,
   useSpring,
   useTransform,
-  MotionValue
-} from "framer-motion";
+  MotionValue,
+} from 'framer-motion';
 // import ScrollListener from './ScrollListener'
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
-    restDelta: 0.001
+    restDelta: 0.001,
   });
   const [selectedPage, setSelectedPage] = useState<string>(SelectedPage.Home);
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
@@ -36,15 +36,19 @@ function App() {
         setSelectedPage(SelectedPage.Home);
       } else setIsTopOfPage(false);
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   // const components = [Home, AboutUs, Ourclasses, Benefits, ContactUs, Footer];
 
   return (
-    <div dir='rtl' className="app bg-secondary text-primary-text">
-      <Navbar isTopOfPage={isTopOfPage} selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+    <div dir="rtl" className="bg-secondary text-primary-text w-svw">
+      <Navbar
+        isTopOfPage={isTopOfPage}
+        selectedPage={selectedPage}
+        setSelectedPage={setSelectedPage}
+      />
       <Home selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
       <AboutUs setSelectedPage={setSelectedPage} />
       <Ourclasses setSelectedPage={setSelectedPage} />
@@ -54,7 +58,10 @@ function App() {
       {/* {components.map((Component) => (
         <Component selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
       ))} */}
-      <motion.div className="fixed left-0 right-0 bottom-2 rounded-full bg-secondary-text w-full h-[0.3125rem]" style={{ scaleX }} />
+      <motion.div
+        className="bg-secondary-text fixed bottom-2 left-0 right-0 h-[0.3125rem] w-full rounded-full"
+        style={{ scaleX }}
+      />
     </div>
   );
 }

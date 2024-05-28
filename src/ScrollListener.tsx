@@ -10,14 +10,18 @@ interface ScrollPagesOptions {
   setSelectedPage: (page: number) => void;
 }
 
-const useScrollPages = ({ selectedPage, setSelectedPage, pageIds }: ScrollPagesOptions) => {
+const useScrollPages = ({
+  selectedPage,
+  setSelectedPage,
+  pageIds,
+}: ScrollPagesOptions) => {
   const prevScrollY = useRef<number>(0);
   const scroll = useRef<boolean>(false);
 
   useEffect(() => {
     const scrollToId = () => {
       console.log('selectedPage', pageIds[selectedPage]);
-      console.log("a",window.scrollY);
+      console.log('a', window.scrollY);
 
       scroller.scrollTo(pageIds[selectedPage], {
         duration: 500,
@@ -26,18 +30,17 @@ const useScrollPages = ({ selectedPage, setSelectedPage, pageIds }: ScrollPagesO
       });
     };
     scrollToId();
-  }, [scroll.current])
+  }, [scroll.current]);
 
   useEffect(() => {
     window.addEventListener('scrollend', () => {
-      
       console.log(scroll.current);
-      scroll.current = !scroll.current
-    })
-  }, [])
+      scroll.current = !scroll.current;
+    });
+  }, []);
 
   // useEffect(() => {
-  //   const handleScroll = () => {     
+  //   const handleScroll = () => {
   //     if (dontScroll) {
   //       return;
   //     }
@@ -50,7 +53,7 @@ const useScrollPages = ({ selectedPage, setSelectedPage, pageIds }: ScrollPagesO
   //         smooth: 'easeInOutQuart',
   //       });
   //     }
-      
+
   //     // const { deltaY } = event;
   //     // if (deltaY > 0) {
   //     //   // Scroll down one page

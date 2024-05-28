@@ -1,10 +1,10 @@
 export enum SelectedPage {
-    Home = 'home',
-    AboutUs = 'aboutus',
-    OurClasses = 'ourclasses',
-    Benefits = 'benefits',
-    ContactUs = 'contactus',
-    Footer = 'footer'
+  Home = 'home',
+  AboutUs = 'aboutus',
+  OurClasses = 'ourclasses',
+  Benefits = 'benefits',
+  ContactUs = 'contactus',
+  Footer = 'footer',
 }
 
 export enum HebrewDisplayName {
@@ -19,13 +19,13 @@ export enum HebrewDisplayName {
 }
 
 export interface BenefitType {
-    icon: JSX.Element;
-    title: string;
-    description: string;
+  icon: JSX.Element;
+  title: string;
+  description: string;
 }
 
 export interface DatasType {
-    name: string;
-    description?: string;
-    image: string;
+  name: string;
+  description?: string;
+  image: string;
 }

@@ -1,17 +1,16 @@
-import { DatasType, HebrewDisplayName, SelectedPage } from "@/shared/types";
+import { DatasType, HebrewDisplayName, SelectedPage } from '@/shared/types';
 import { motion, useScroll } from 'framer-motion';
-import HText from "@/shared/HText";
-import { datas, trainingPlans, trainingPlansTitle } from "./data";
-import Class from "./Class";
-import { Element } from "react-scroll";
-import { useRef, useState } from "react";
+import HText from '@/shared/HText';
+import { datas, trainingPlans, trainingPlansTitle } from './data';
+import Class from './Class';
+import { Element } from 'react-scroll';
+import { useRef, useState } from 'react';
 import { Link as LinkScroll } from 'react-scroll/modules';
-import useMediaQuery from "@/hooks/useMediaQuery";
-
+import useMediaQuery from '@/hooks/useMediaQuery';
 
 type Props = {
   setSelectedPage: (value: string) => void;
-}
+};
 
 // const Ourclasses = ({ setSelectedPage }: Props) => {
 //   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
@@ -68,65 +67,83 @@ type Props = {
 
 // export default Ourclasses;
 import React from 'react';
-import { useParallax } from "@/hooks/hooks";
-
+import { useParallax } from '@/hooks/hooks';
 
 const TrainingPrograms: React.FC<Props> = ({ setSelectedPage }) => {
-  const [expandedPlan, setExpandedPlan] = useState<number | null>(null);
-  const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
+  const [expandedPlan, setExpandedPlan] = useState<number>(0);
+  const isAboveMediumScreens = useMediaQuery('(min-width: 1060px)');
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useParallax(scrollYProgress, 300);
 
   return (
-    <section id="ourclasses" className="bg-primary h-svh flex justify-center items-center relative snap-center">
+    <section
+      id="ourclasses"
+      className="bg-primary relative flex h-svh snap-center items-center justify-center"
+    >
       <div ref={ref} className=" mx-auto w-5/6 py-24">
         {/* <motion.h2 className='absolute' style={{ y }}>{`#${HebrewDisplayName.ourclasses}`}</motion.h2> */}
-        <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.OurClasses)}>
-          <div className="text-center mb-10">
-            <h1 className="text-[1.5rem] font-bold text-highlight">מסלולי אימונים מותאמים אישית</h1>
-            <p className="mt-5 text-[1rem] text-secondary-text">
+        <motion.div
+          onViewportEnter={() => setSelectedPage(SelectedPage.OurClasses)}
+        >
+          <div className="mb-10 text-center">
+            <h1 className="text-highlight text-[1.5rem] font-bold">
+              מסלולי אימונים מותאמים אישית
+            </h1>
+            <p className="text-secondary-text mt-5 text-[1rem]">
               מצאו את מסלול האימון המתאים ביותר למטרות שלכם ולוח הזמנים שלכם.
             </p>
           </div>
 
-          <div className={` ${isAboveMediumScreens ? 'flex flex-row justify-center' : 'grid grid-cols-1'} max-w-full gap-4`}>
+          <div
+            className={` ${
+              isAboveMediumScreens
+                ? 'flex flex-row justify-center'
+                : 'grid grid-cols-1'
+            } max-w-full gap-4`}
+          >
             {trainingPlans.map((plan, index) => (
               <motion.div
                 key={index}
-                className={`bg-secondary p-3 rounded-lg ${isAboveMediumScreens ? 'flex-shrink-0 w-1/4' : 'w-full'}`}
+                className={`bg-secondary rounded-lg p-3 ${
+                  isAboveMediumScreens ? 'w-1/4 flex-shrink-0' : 'w-full'
+                }`}
                 initial={false}
-                animate={{ height: expandedPlan === index ? 'auto' : 'fit-content' }}
+                animate={{ height: 'auto', opacity: 1 }}
+                // animate={{ height: expandedPlan === index ? 'auto' : 'fit-content' }}
                 transition={{
                   height: {
                     duration: 0.5,
-                    ease: "easeInOut"
-                  }
+                    ease: 'easeInOut',
+                  },
                 }}
                 exit={{ height: 0 }}
               >
                 <h2
-                  className="text-2xl font-bold text-highlight cursor-pointer"
-                  onClick={() => setExpandedPlan(expandedPlan === index ? null : index)}
+                  className="text-highlight cursor-pointer text-xl font-bold"
+                  onClick={() => setExpandedPlan(index)}
                 >
                   {plan.title}
                 </h2>
-                {(expandedPlan === undefined && index === 0) || (expandedPlan === index || isAboveMediumScreens) && (
+                {(expandedPlan === index || isAboveMediumScreens) && (
                   <motion.div
+                    className="text-secondary-text"
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.5 }}
                   >
                     <p className="mt-3">{plan.description}</p>
-                    <ul className="list-disc list-inside mt-3">
+                    <ul className="mt-3 list-inside list-disc ease-in-out">
                       {plan.features.map((feature, i) => (
                         <li key={i}>{feature}</li>
                       ))}
                     </ul>
                     <LinkScroll
-                      smooth duration={1000} to={SelectedPage.ContactUs}
-                      className='inline-block mt-5 bg-accent text-white px-6 py-3 rounded-lg cursor-pointer'
+                      smooth
+                      duration={1000}
+                      to={SelectedPage.ContactUs}
+                      className="bg-accent mt-5 inline-block cursor-pointer rounded-lg px-6 py-3 text-white"
                       onClick={() => setSelectedPage(SelectedPage.ContactUs)}
                     >
                       <p>הצטרפו עכשיו</p>
@@ -137,22 +154,22 @@ const TrainingPrograms: React.FC<Props> = ({ setSelectedPage }) => {
             ))}
           </div>
 
-          <div className="text-center mt-10">
+          <div className="mt-10 text-center">
             <LinkScroll
-              smooth duration={1000} to={SelectedPage.ContactUs}
-              className="inline-block bg-accent text-white px-6 py-3 rounded-lg cursor-pointer"
+              smooth
+              duration={1000}
+              to={SelectedPage.ContactUs}
+              className="bg-accent inline-block cursor-pointer rounded-lg px-6 py-3 text-white"
               // className='text-sm font-bold text-primary-text underline hover:text-accent cursor-pointer'
               onClick={() => setSelectedPage(SelectedPage.ContactUs)}
             >
-              <p >
-                מצאו את המסלול המתאים לכם והתחילו כבר היום!
-              </p>
+              <p>מצאו את המסלול המתאים לכם והתחילו כבר היום!</p>
             </LinkScroll>
           </div>
         </motion.div>
       </div>
     </section>
   );
-}
+};
 
 export default TrainingPrograms;
