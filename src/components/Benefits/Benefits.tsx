@@ -4,22 +4,21 @@ import HText from '@/shared/HText';
 import { benefits } from './data';
 import BenefitsSection from './BenefitsSection';
 import ActionButton from '@/shared/ActionButton';
-import BenefitsPageGraphic from '@/assets/images/BenefitsPageGraphic.png'
-import { Element } from "react-scroll";
+import BenefitsPageGraphic from '@/assets/images/BenefitsPageGraphic.png';
+import { Element } from 'react-scroll';
 import { useRef } from 'react';
 import { useParallax } from '@/hooks/hooks';
 
-
 type Props = {
   setSelectedPage: (value: string) => void;
-}
+};
 
 const container = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.2 }
-  }
-}
+    transition: { staggerChildren: 0.2 },
+  },
+};
 
 const Benefits = ({ setSelectedPage }: Props) => {
   const ref = useRef(null);
@@ -27,19 +26,30 @@ const Benefits = ({ setSelectedPage }: Props) => {
   const y = useParallax(scrollYProgress, 300);
 
   return (
-    <section id='benefits' className='h-svh flex justify-center items-center relative snap-center'>
+    <section
+      id="benefits"
+      className="relative flex h-svh snap-center items-center justify-center"
+    >
       <div ref={ref} className="">
         {/* <motion.h2 className='absolute' style={{ y }}>{`#${HebrewDisplayName.benefits}`}</motion.h2> */}
         <motion.div
-          className='flex flex-col justify-center items-center '
+          className="flex flex-col items-center justify-center "
           onViewportEnter={() => setSelectedPage(SelectedPage.Benefits)}
         >
-
           {/* כותרת */}
-          <motion.div className='w-5/6 md:my-5 my-10 md:w-3/5'
-            initial='hidden' whileInView='visible' viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.5 }} variants={{ hidden: { opacity: 0, x: -50 }, visible: { opacity: 1, x: 0 } }} >
+          <motion.div
+            className="my-10 w-5/6 md:my-5 md:w-3/5"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5 }}
+            variants={{
+              hidden: { opacity: 0, x: -50 },
+              visible: { opacity: 1, x: 0 },
+            }}
+          >
             <HText>יותר מסתם סטודיו</HText>
-            <p className='my-5 text-secondary-text text-sm'>
+            <p className="text-secondary-text my-5 text-sm">
               אנחנו מספקים מתקני כושר מעולים מסדר עולמי, מאמנים ושיעורים שיעזרו
               לך להגיע למטרות הכושר האולטימטיביות שלך בקלות. אנחנו מעניקים תשומת
               לב אמיתית לכל חבר וחברה.
@@ -48,20 +58,24 @@ const Benefits = ({ setSelectedPage }: Props) => {
 
           {/* יתרונות */}
           <motion.div
-            className='w-[98svw] flex overflow-x-auto overflow-y-hidden items-center justify-between'
-            initial='hidden' whileInView='visible' viewport={{ once: true, amount: 0.5 }} variants={container} 
-            >
-            {
-              benefits.map((benefit) => (
-                <BenefitsSection benefit={benefit} setSelectedPage={setSelectedPage} key={benefit.title} />
-              ))
-            }
+            className="flex w-[98svw] items-center justify-between overflow-x-auto overflow-y-hidden"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={container}
+          >
+            {benefits.map((benefit) => (
+              <BenefitsSection
+                benefit={benefit}
+                setSelectedPage={setSelectedPage}
+                key={benefit.title}
+              />
+            ))}
           </motion.div>
           {/* תמונה ותיאור */}
-          <div 
+          <div
           // className='mt-16 items-center justify-between gap-20 md:mt-28 md:flex'
           >
-
             {/* תיאור */}
             <div>
               {/* כותרת */}
@@ -100,6 +114,6 @@ const Benefits = ({ setSelectedPage }: Props) => {
       </div>
     </section>
   );
-}
+};
 
 export default Benefits;

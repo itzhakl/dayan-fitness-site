@@ -23,3 +23,7 @@ html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
+
+circle.enable-trigger-circle {
+  fill: black;
+}
