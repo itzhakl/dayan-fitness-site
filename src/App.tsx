@@ -43,7 +43,7 @@ function App() {
   // const components = [Home, AboutUs, Ourclasses, Benefits, ContactUs, Footer];
 
   return (
-    <div dir="rtl" className="bg-secondary text-primary-text w-svw">
+    <div dir="rtl" className="bg-secondary text-primary-text max-w-svw">
       <Navbar
         isTopOfPage={isTopOfPage}
         selectedPage={selectedPage}
